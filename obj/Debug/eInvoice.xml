@@ -1,0 +1,169 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+eInvoice
+</name>
+</assembly>
+<members>
+<member name="M:GSTINTEGRATION.CashSalesRegister.FillPOSLocation">
+******************************  To fill POS details from POSMaster  *******************************'''
+
+</member><member name="M:GSTINTEGRATION.CashSalesRegister.FillServerCode">
+*****************************  To fill Server details from ServerMaster  **************************'''
+
+</member><member name="M:GSTINTEGRATION.frmSelectivepaymentmode.FillPaymentMode">
+******************************  To fill PAYMENT MODE from PAYMENTMODEMASTER  *******************************'''
+
+</member><member name="M:GSTINTEGRATION.frmSelectivepaymentmode.FillPOSLocation">
+******************************  To fill POS details from POSMaster  *******************************'''
+
+</member><member name="M:GSTINTEGRATION.frmDatewiseNonCreditRegister.FillMemberMaster">
+******************************  To fill --&gt;Call Fill Memberdetails from Membermaster  *******************************'''
+
+</member><member name="M:GSTINTEGRATION.frmDatewiseNonCreditRegister.FillPOSLocation">
+******************************  To fill POS details from POSMaster  *******************************'''
+
+</member><member name="M:GSTINTEGRATION.SalesBillChecklist1.FillPOS">
+******************************  To fill POS details from POSMaster  *******************************'''
+
+</member><member name="M:GSTINTEGRATION.SalesBillChecklist1.FillServer">
+*****************************  To fill Server details from ServerMaster  **************************'''
+
+</member><member name="M:GSTINTEGRATION.CouponSales.FillPOSLocation">
+******************************  To FILL POS CODE FROM POSMASTER  ********************************************'''
+
+</member><member name="M:GSTINTEGRATION.CouponSales.FillCoupon">
+*****************************  To FILL COUPON DETAILS FROM SUBPAYMENTMODE MASTER  **************************'''
+
+</member><member name="M:GSTINTEGRATION.SalesReportClubAccount.FillPOSLocation">
+******************************  To fill POS details from POSMaster  *******************************'''
+
+</member><member name="M:GSTINTEGRATION.SalesReportClubAccount.Fillclubaccount">
+*****************************  To fill Server details from ServerMaster  **************************'''
+
+</member><member name="M:GSTINTEGRATION.rptPendingbill.FillServerCode">
+*****************************  To fill Server details from ServerMaster  **************************'''
+
+</member><member name="T:GSTINTEGRATION.Dataset1.VIEW_FSNrptDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:GSTINTEGRATION.Dataset1.view_billsummaryDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:GSTINTEGRATION.Dataset1.VIEW_FSNrptRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:GSTINTEGRATION.Dataset1.view_billsummaryRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:GSTINTEGRATION.Dataset1.VIEW_FSNrptRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:GSTINTEGRATION.Dataset1.view_billsummaryRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:GSTINTEGRATION.Dataset1">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="M:GSTINTEGRATION.SalesReportRoom.FillPOSLocation">
+******************************  To fill POS details from POSMaster  *******************************'''
+
+</member><member name="M:GSTINTEGRATION.SalesReportRoom.FillRoomNo">
+*****************************  To fill Room details from Roommaster  **************************'''
+
+</member><member name="M:GSTINTEGRATION.frmServerwisePendingKotRegister.FillServerCode">
+*****************************  To fill Server details from ServerMaster  **************************'''
+
+</member><member name="M:GSTINTEGRATION.frmServerwisePendingKotRegister.Timer1_Tick(System.Object,System.EventArgs)">
+Private Sub CmdClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Chklist_ServerCode.Items.Clear()
+    grp_SalebillChecklist.Top = 1000
+    Chk_Servercode.Checked = False
+    ''opt_Details.Checked = True
+    Call FillServerCode()
+End Sub
+
+</member><member name="M:GSTINTEGRATION.SalesCheck.FillServerName">
+*****************************  To fill Server details from SERVERMASTER  **************************'''
+
+</member><member name="M:GSTINTEGRATION.frmCreditSalesregister.FillPOSLocation">
+******************************  To fill POS details from POSMaster  *******************************'''
+
+</member><member name="M:GSTINTEGRATION.frmCreditSalesregister.FillMembername">
+*****************************  To fill Server details from ServerMaster  **************************'''
+
+</member><member name="M:GSTINTEGRATION.DaywiseSalesRegister.FillPOSLocation">
+******************************  To fill POS details from POSMASTER  *******************************'''
+
+</member><member name="M:GSTINTEGRATION.frmPartySaleregisterpartywise.FillMemberMaster">
+******************************  To fill --&gt;Call Fill Memberdetails from Membermaster  *******************************'''
+
+</member><member name="M:GSTINTEGRATION.frmPartySaleregisterpartywise.FillPOSLocation">
+******************************  To fill POS details from POSMaster  *******************************'''
+
+</member><member name="M:GSTINTEGRATION.CashSales.FillPOSLocation">
+******************************  To fill POS details from POSMaster  *******************************'''
+
+</member><member name="M:GSTINTEGRATION.CashSales.FillMembername">
+*****************************  To fill Server details from ServerMaster  **************************'''
+
+</member><member name="M:GSTINTEGRATION.frmRoomsaleregisterdatewise.FillPOSLocation">
+******************************  To fill POS details from POSMaster  *******************************'''
+
+</member><member name="M:GSTINTEGRATION.frmRoomsaleregisterdatewise.FillRoomNo">
+*****************************  To fill Room details from Roommaster  **************************'''
+
+</member><member name="M:GSTINTEGRATION.NonCreditRegister.FillMemberMaster">
+******************************  To fill --&gt;Call Fill Memberdetails from Membermaster  *******************************'''
+
+</member><member name="M:GSTINTEGRATION.NonCreditRegister.FillPOSLocation">
+******************************  To fill POS details from POSMaster  *******************************'''
+
+</member><member name="M:GSTINTEGRATION.SmartCardSalesRegister.FillPOSLocation">
+******************************  To fill POS details from POSMaster  *******************************'''
+
+</member><member name="M:GSTINTEGRATION.SmartCardSalesRegister.FillServerCode">
+*****************************  To fill Server details from ServerMaster  **************************'''
+
+</member><member name="P:GSTINTEGRATION.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:GSTINTEGRATION.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:GSTINTEGRATION.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="M:GSTINTEGRATION.frmPartySaleregisterdatewise.FillMemberMaster">
+******************************  To fill --&gt;Call Fill Memberdetails from Membermaster  *******************************'''
+
+</member><member name="M:GSTINTEGRATION.frmPartySaleregisterdatewise.FillPOSLocation">
+******************************  To fill POS details from POSMaster  *******************************'''
+
+</member><member name="M:GSTINTEGRATION.CashSalesGroup.FillPOSLocation">
+******************************  To fill POS details from POSMaster  *******************************'''
+
+</member><member name="M:GSTINTEGRATION.SaleRegisterVoucherwise.FillPOS">
+******************************  To fill POS details from POSMaster  *******************************'''
+
+</member><member name="M:GSTINTEGRATION.RoomSalesCheckin.FillServerCode">
+*****************************  To fill Server details from ServerMaster  **************************'''
+
+</member><member name="M:GSTINTEGRATION.frmVoucherControl.FillPOSLocation">
+******************************  To fill POS details from POSMaster  *******************************'''
+
+</member>
+</members>
+</doc>

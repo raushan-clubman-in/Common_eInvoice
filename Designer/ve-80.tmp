@@ -1,0 +1,1433 @@
+Public Class MDIForm
+    Inherits System.Windows.Forms.Form
+    Dim gconnection As New GlobalClass
+#Region " Windows Form Designer generated code "
+
+    Public Sub New()
+        MyBase.New()
+
+        'This call is required by the Windows Form Designer.
+        InitializeComponent()
+
+        'Add any initialization after the InitializeComponent() call
+
+    End Sub
+
+    'Form overrides dispose to clean up the component list.
+    Protected Overloads Overrides Sub Dispose(ByVal disposing As Boolean)
+        If disposing Then
+            If Not (components Is Nothing) Then
+                components.Dispose()
+            End If
+        End If
+        MyBase.Dispose(disposing)
+    End Sub
+
+    'Required by the Windows Form Designer
+    Private components As System.ComponentModel.IContainer
+
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.  
+    'Do not modify it using the code editor.
+    Friend WithEvents MainMenu1 As System.Windows.Forms.MainMenu
+    Friend WithEvents MenuItem1 As System.Windows.Forms.MenuItem
+    Friend WithEvents MenuItem10 As System.Windows.Forms.MenuItem
+    Friend WithEvents OleDbConnection1 As System.Data.OleDb.OleDbConnection
+    Friend WithEvents Menu_Reports As System.Windows.Forms.MenuItem
+    Friend WithEvents mnu_Utility As System.Windows.Forms.MenuItem
+    Friend WithEvents submnu_Calculator As System.Windows.Forms.MenuItem
+    Friend WithEvents submnu_Notepad As System.Windows.Forms.MenuItem
+    Friend WithEvents mnu_Window As System.Windows.Forms.MenuItem
+    Friend WithEvents mnu_Exit As System.Windows.Forms.MenuItem
+    Friend WithEvents submnu_Horizontal As System.Windows.Forms.MenuItem
+    Friend WithEvents submnu_Vertical As System.Windows.Forms.MenuItem
+    Friend WithEvents submnu_Cascade As System.Windows.Forms.MenuItem
+    Friend WithEvents MenuItem12 As System.Windows.Forms.MenuItem
+    Friend WithEvents submnu_POSmaster As System.Windows.Forms.MenuItem
+    Friend WithEvents submnu_Groupmaster As System.Windows.Forms.MenuItem
+    Friend WithEvents submnu_UOMmaster As System.Windows.Forms.MenuItem
+    Friend WithEvents submnu_Seprator1 As System.Windows.Forms.MenuItem
+    Friend WithEvents submnu_Itemtypemaster As System.Windows.Forms.MenuItem
+    Friend WithEvents submnu_Itemmaster As System.Windows.Forms.MenuItem
+    Friend WithEvents submnu_Ratemaster As System.Windows.Forms.MenuItem
+    Friend WithEvents submnu_Seprator2 As System.Windows.Forms.MenuItem
+    Friend WithEvents submnu_Servermaster As System.Windows.Forms.MenuItem
+    Friend WithEvents submnu_Tablemaster As System.Windows.Forms.MenuItem
+    Friend WithEvents submnu_POSdocument As System.Windows.Forms.MenuItem
+    Friend WithEvents submnu_UOMsalerelation As System.Windows.Forms.MenuItem
+    Friend WithEvents submnu_Seprator3 As System.Windows.Forms.MenuItem
+    Friend WithEvents submnu_Paymentmode As System.Windows.Forms.MenuItem
+    Friend WithEvents submnu_SubPaymentmode As System.Windows.Forms.MenuItem
+    Friend WithEvents submnu_KOTEntry As System.Windows.Forms.MenuItem
+    Friend WithEvents submnu_FinalBill As System.Windows.Forms.MenuItem
+    Friend WithEvents submnu_Seperator As System.Windows.Forms.MenuItem
+    Friend WithEvents submnu_ManualBill As System.Windows.Forms.MenuItem
+    Friend WithEvents submnu_CashReceipt As System.Windows.Forms.MenuItem
+    Friend WithEvents Submenu_CROdaliycash As System.Windows.Forms.MenuItem
+    Friend WithEvents Submenu_Saleregister As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_Salechecklist As System.Windows.Forms.MenuItem
+    Friend WithEvents Submenu_Unrealisedbill As System.Windows.Forms.MenuItem
+    Friend WithEvents Submenu_Cashsales As System.Windows.Forms.MenuItem
+    Friend WithEvents Submenu_Creditsales As System.Windows.Forms.MenuItem
+    Friend WithEvents Submenu_Couponsales As System.Windows.Forms.MenuItem
+    Friend WithEvents Submenu_Roomsales As System.Windows.Forms.MenuItem
+    Friend WithEvents Submenu_ClubACsales As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_Partysales As System.Windows.Forms.MenuItem
+    Friend WithEvents Submenu_Noncreditsales As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_Roomsaleroomwise As System.Windows.Forms.MenuItem
+    Friend WithEvents MenuItem20 As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_Roomsalesdatewise As System.Windows.Forms.MenuItem
+    Friend WithEvents MenuItem23 As System.Windows.Forms.MenuItem
+    Friend WithEvents MenuItem26 As System.Windows.Forms.MenuItem
+    Friend WithEvents Submenu_Reciprocalsales As System.Windows.Forms.MenuItem
+    Friend WithEvents Submenu_Cashreceipt As System.Windows.Forms.MenuItem
+    Friend WithEvents Submenu_Manualadjustmentlist As System.Windows.Forms.MenuItem
+    Friend WithEvents Submenu_Documentprinting As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_Noncreditsalespartywise As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_Noncreditsalesdatewise As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_Reciprocalsaleslocationwise As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_Reciprocalsalesdatewise As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_SelectiveKOT As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_Comment1 As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_Datewisesales As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_Comment2 As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_Vouchersummary As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_Comment3 As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_Daywisesales As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_Comment4 As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_Itemwisesales As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_Unrealiseddaterange As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_Comment9 As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_Unrealisedasondate As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_Comment10 As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_Unrealisedexcesslist As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_Comment8 As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_Partysalespartywise As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_Comment13 As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_Comment14 As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_Selectivefinalbill As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_Comment15 As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_Selectivemanualbill As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_Comment16 As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_SelectiveCROreceipt As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_Comment17 As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_Selectiveroombill As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_Partysalesdatewise As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_Unrealisedbillshortlist As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_Comment11 As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_UnrealisedbillPendingKOTs As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_Comment5 As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_Tobacoosales As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_Comment6 As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_Vouchercontrols As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_Comment7 As System.Windows.Forms.MenuItem
+    Friend WithEvents Submnu_Entrycontrols As System.Windows.Forms.MenuItem
+    Friend WithEvents MenuItem2 As System.Windows.Forms.MenuItem
+    Friend WithEvents submnu_Accountposting As System.Windows.Forms.MenuItem
+    Friend WithEvents submnu_AutoServicebill As System.Windows.Forms.MenuItem
+    Friend WithEvents Submenu_SettlementReport As System.Windows.Forms.MenuItem
+    Friend WithEvents sub_mnupossetupmaster As System.Windows.Forms.MenuItem
+    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
+        Me.MainMenu1 = New System.Windows.Forms.MainMenu
+        Me.MenuItem1 = New System.Windows.Forms.MenuItem
+        Me.submnu_POSmaster = New System.Windows.Forms.MenuItem
+        Me.submnu_Groupmaster = New System.Windows.Forms.MenuItem
+        Me.submnu_UOMmaster = New System.Windows.Forms.MenuItem
+        Me.submnu_Seprator1 = New System.Windows.Forms.MenuItem
+        Me.submnu_Itemtypemaster = New System.Windows.Forms.MenuItem
+        Me.submnu_Itemmaster = New System.Windows.Forms.MenuItem
+        Me.submnu_Ratemaster = New System.Windows.Forms.MenuItem
+        Me.submnu_Seprator2 = New System.Windows.Forms.MenuItem
+        Me.submnu_Servermaster = New System.Windows.Forms.MenuItem
+        Me.submnu_Tablemaster = New System.Windows.Forms.MenuItem
+        Me.submnu_POSdocument = New System.Windows.Forms.MenuItem
+        Me.submnu_UOMsalerelation = New System.Windows.Forms.MenuItem
+        Me.submnu_Seprator3 = New System.Windows.Forms.MenuItem
+        Me.submnu_Paymentmode = New System.Windows.Forms.MenuItem
+        Me.submnu_SubPaymentmode = New System.Windows.Forms.MenuItem
+        Me.sub_mnupossetupmaster = New System.Windows.Forms.MenuItem
+        Me.MenuItem10 = New System.Windows.Forms.MenuItem
+        Me.submnu_KOTEntry = New System.Windows.Forms.MenuItem
+        Me.submnu_FinalBill = New System.Windows.Forms.MenuItem
+        Me.submnu_Seperator = New System.Windows.Forms.MenuItem
+        Me.submnu_ManualBill = New System.Windows.Forms.MenuItem
+        Me.submnu_CashReceipt = New System.Windows.Forms.MenuItem
+        Me.MenuItem2 = New System.Windows.Forms.MenuItem
+        Me.submnu_Accountposting = New System.Windows.Forms.MenuItem
+        Me.submnu_AutoServicebill = New System.Windows.Forms.MenuItem
+        Me.Menu_Reports = New System.Windows.Forms.MenuItem
+        Me.Submenu_CROdaliycash = New System.Windows.Forms.MenuItem
+        Me.Submenu_Saleregister = New System.Windows.Forms.MenuItem
+        Me.Submnu_Salechecklist = New System.Windows.Forms.MenuItem
+        Me.Submnu_Comment1 = New System.Windows.Forms.MenuItem
+        Me.Submnu_Datewisesales = New System.Windows.Forms.MenuItem
+        Me.Submnu_Comment2 = New System.Windows.Forms.MenuItem
+        Me.Submnu_Vouchersummary = New System.Windows.Forms.MenuItem
+        Me.Submnu_Comment3 = New System.Windows.Forms.MenuItem
+        Me.Submnu_Daywisesales = New System.Windows.Forms.MenuItem
+        Me.Submnu_Comment4 = New System.Windows.Forms.MenuItem
+        Me.Submnu_Itemwisesales = New System.Windows.Forms.MenuItem
+        Me.Submnu_Comment5 = New System.Windows.Forms.MenuItem
+        Me.Submnu_Tobacoosales = New System.Windows.Forms.MenuItem
+        Me.Submnu_Comment6 = New System.Windows.Forms.MenuItem
+        Me.Submnu_Vouchercontrols = New System.Windows.Forms.MenuItem
+        Me.Submnu_Comment7 = New System.Windows.Forms.MenuItem
+        Me.Submnu_Entrycontrols = New System.Windows.Forms.MenuItem
+        Me.Submenu_Unrealisedbill = New System.Windows.Forms.MenuItem
+        Me.Submnu_Unrealiseddaterange = New System.Windows.Forms.MenuItem
+        Me.Submnu_Comment9 = New System.Windows.Forms.MenuItem
+        Me.Submnu_Unrealisedasondate = New System.Windows.Forms.MenuItem
+        Me.Submnu_Comment10 = New System.Windows.Forms.MenuItem
+        Me.Submnu_Unrealisedexcesslist = New System.Windows.Forms.MenuItem
+        Me.Submnu_Comment8 = New System.Windows.Forms.MenuItem
+        Me.Submnu_Unrealisedbillshortlist = New System.Windows.Forms.MenuItem
+        Me.Submnu_Comment11 = New System.Windows.Forms.MenuItem
+        Me.Submnu_UnrealisedbillPendingKOTs = New System.Windows.Forms.MenuItem
+        Me.Submenu_Cashsales = New System.Windows.Forms.MenuItem
+        Me.Submenu_Creditsales = New System.Windows.Forms.MenuItem
+        Me.Submenu_Couponsales = New System.Windows.Forms.MenuItem
+        Me.Submenu_Roomsales = New System.Windows.Forms.MenuItem
+        Me.Submnu_Roomsaleroomwise = New System.Windows.Forms.MenuItem
+        Me.MenuItem20 = New System.Windows.Forms.MenuItem
+        Me.Submnu_Roomsalesdatewise = New System.Windows.Forms.MenuItem
+        Me.Submenu_ClubACsales = New System.Windows.Forms.MenuItem
+        Me.Submnu_Partysales = New System.Windows.Forms.MenuItem
+        Me.Submnu_Partysalespartywise = New System.Windows.Forms.MenuItem
+        Me.Submnu_Comment13 = New System.Windows.Forms.MenuItem
+        Me.Submnu_Partysalesdatewise = New System.Windows.Forms.MenuItem
+        Me.Submenu_Noncreditsales = New System.Windows.Forms.MenuItem
+        Me.Submnu_Noncreditsalespartywise = New System.Windows.Forms.MenuItem
+        Me.MenuItem23 = New System.Windows.Forms.MenuItem
+        Me.Submnu_Noncreditsalesdatewise = New System.Windows.Forms.MenuItem
+        Me.Submenu_Reciprocalsales = New System.Windows.Forms.MenuItem
+        Me.Submnu_Reciprocalsaleslocationwise = New System.Windows.Forms.MenuItem
+        Me.MenuItem26 = New System.Windows.Forms.MenuItem
+        Me.Submnu_Reciprocalsalesdatewise = New System.Windows.Forms.MenuItem
+        Me.Submenu_SettlementReport = New System.Windows.Forms.MenuItem
+        Me.Submenu_Cashreceipt = New System.Windows.Forms.MenuItem
+        Me.Submenu_Manualadjustmentlist = New System.Windows.Forms.MenuItem
+        Me.Submenu_Documentprinting = New System.Windows.Forms.MenuItem
+        Me.Submnu_SelectiveKOT = New System.Windows.Forms.MenuItem
+        Me.Submnu_Comment14 = New System.Windows.Forms.MenuItem
+        Me.Submnu_Selectivefinalbill = New System.Windows.Forms.MenuItem
+        Me.Submnu_Comment15 = New System.Windows.Forms.MenuItem
+        Me.Submnu_Selectivemanualbill = New System.Windows.Forms.MenuItem
+        Me.Submnu_Comment16 = New System.Windows.Forms.MenuItem
+        Me.Submnu_SelectiveCROreceipt = New System.Windows.Forms.MenuItem
+        Me.Submnu_Comment17 = New System.Windows.Forms.MenuItem
+        Me.Submnu_Selectiveroombill = New System.Windows.Forms.MenuItem
+        Me.mnu_Utility = New System.Windows.Forms.MenuItem
+        Me.submnu_Calculator = New System.Windows.Forms.MenuItem
+        Me.submnu_Notepad = New System.Windows.Forms.MenuItem
+        Me.mnu_Window = New System.Windows.Forms.MenuItem
+        Me.submnu_Horizontal = New System.Windows.Forms.MenuItem
+        Me.submnu_Vertical = New System.Windows.Forms.MenuItem
+        Me.submnu_Cascade = New System.Windows.Forms.MenuItem
+        Me.mnu_Exit = New System.Windows.Forms.MenuItem
+        Me.MenuItem12 = New System.Windows.Forms.MenuItem
+        Me.OleDbConnection1 = New System.Data.OleDb.OleDbConnection
+        '
+        'MainMenu1
+        '
+        Me.MainMenu1.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.MenuItem1, Me.MenuItem10, Me.Menu_Reports, Me.mnu_Utility, Me.mnu_Window, Me.mnu_Exit, Me.MenuItem12})
+        '
+        'MenuItem1
+        '
+        Me.MenuItem1.Index = 0
+        Me.MenuItem1.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.submnu_POSmaster, Me.submnu_Groupmaster, Me.submnu_UOMmaster, Me.submnu_Seprator1, Me.submnu_Itemtypemaster, Me.submnu_Itemmaster, Me.submnu_Ratemaster, Me.submnu_Seprator2, Me.submnu_Servermaster, Me.submnu_Tablemaster, Me.submnu_POSdocument, Me.submnu_UOMsalerelation, Me.submnu_Seprator3, Me.submnu_Paymentmode, Me.submnu_SubPaymentmode, Me.sub_mnupossetupmaster})
+        Me.MenuItem1.Text = "&Masters"
+        '
+        'submnu_POSmaster
+        '
+        Me.submnu_POSmaster.Index = 0
+        Me.submnu_POSmaster.Shortcut = System.Windows.Forms.Shortcut.CtrlP
+        Me.submnu_POSmaster.Text = "&POS Master"
+        '
+        'submnu_Groupmaster
+        '
+        Me.submnu_Groupmaster.Index = 1
+        Me.submnu_Groupmaster.Shortcut = System.Windows.Forms.Shortcut.CtrlG
+        Me.submnu_Groupmaster.Text = "&Group Master"
+        '
+        'submnu_UOMmaster
+        '
+        Me.submnu_UOMmaster.Index = 2
+        Me.submnu_UOMmaster.Shortcut = System.Windows.Forms.Shortcut.CtrlU
+        Me.submnu_UOMmaster.Text = "&UOM Master"
+        '
+        'submnu_Seprator1
+        '
+        Me.submnu_Seprator1.Index = 3
+        Me.submnu_Seprator1.Text = "-"
+        '
+        'submnu_Itemtypemaster
+        '
+        Me.submnu_Itemtypemaster.Index = 4
+        Me.submnu_Itemtypemaster.Shortcut = System.Windows.Forms.Shortcut.CtrlT
+        Me.submnu_Itemtypemaster.Text = "Item &Type Master"
+        '
+        'submnu_Itemmaster
+        '
+        Me.submnu_Itemmaster.Index = 5
+        Me.submnu_Itemmaster.Shortcut = System.Windows.Forms.Shortcut.CtrlI
+        Me.submnu_Itemmaster.Text = "&Item Master"
+        '
+        'submnu_Ratemaster
+        '
+        Me.submnu_Ratemaster.Index = 6
+        Me.submnu_Ratemaster.Shortcut = System.Windows.Forms.Shortcut.CtrlR
+        Me.submnu_Ratemaster.Text = "&Rate Master"
+        '
+        'submnu_Seprator2
+        '
+        Me.submnu_Seprator2.Index = 7
+        Me.submnu_Seprator2.Text = "-"
+        '
+        'submnu_Servermaster
+        '
+        Me.submnu_Servermaster.Index = 8
+        Me.submnu_Servermaster.Shortcut = System.Windows.Forms.Shortcut.CtrlS
+        Me.submnu_Servermaster.Text = "&Server Master"
+        '
+        'submnu_Tablemaster
+        '
+        Me.submnu_Tablemaster.Index = 9
+        Me.submnu_Tablemaster.Shortcut = System.Windows.Forms.Shortcut.CtrlB
+        Me.submnu_Tablemaster.Text = "Ta&ble Master"
+        '
+        'submnu_POSdocument
+        '
+        Me.submnu_POSdocument.Index = 10
+        Me.submnu_POSdocument.Shortcut = System.Windows.Forms.Shortcut.CtrlD
+        Me.submnu_POSdocument.Text = "POS &Document"
+        '
+        'submnu_UOMsalerelation
+        '
+        Me.submnu_UOMsalerelation.Index = 11
+        Me.submnu_UOMsalerelation.Shortcut = System.Windows.Forms.Shortcut.CtrlA
+        Me.submnu_UOMsalerelation.Text = "UOM S&ale Relation"
+        '
+        'submnu_Seprator3
+        '
+        Me.submnu_Seprator3.Index = 12
+        Me.submnu_Seprator3.Text = "-"
+        '
+        'submnu_Paymentmode
+        '
+        Me.submnu_Paymentmode.Index = 13
+        Me.submnu_Paymentmode.Shortcut = System.Windows.Forms.Shortcut.CtrlO
+        Me.submnu_Paymentmode.Text = "Payment M&ode Master"
+        '
+        'submnu_SubPaymentmode
+        '
+        Me.submnu_SubPaymentmode.Index = 14
+        Me.submnu_SubPaymentmode.Shortcut = System.Windows.Forms.Shortcut.CtrlN
+        Me.submnu_SubPaymentmode.Text = "Sub Payme&nt Mode Master"
+        '
+        'sub_mnupossetupmaster
+        '
+        Me.sub_mnupossetupmaster.Index = 15
+        Me.sub_mnupossetupmaster.Shortcut = System.Windows.Forms.Shortcut.CtrlE
+        Me.sub_mnupossetupmaster.Text = "Pos Setup Mast&er"
+        '
+        'MenuItem10
+        '
+        Me.MenuItem10.Index = 1
+        Me.MenuItem10.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.submnu_KOTEntry, Me.submnu_FinalBill, Me.submnu_Seperator, Me.submnu_ManualBill, Me.submnu_CashReceipt, Me.MenuItem2, Me.submnu_Accountposting, Me.submnu_AutoServicebill})
+        Me.MenuItem10.Text = "&Transactions"
+        '
+        'submnu_KOTEntry
+        '
+        Me.submnu_KOTEntry.Index = 0
+        Me.submnu_KOTEntry.Shortcut = System.Windows.Forms.Shortcut.CtrlK
+        Me.submnu_KOTEntry.Text = "&KOT Entry"
+        '
+        'submnu_FinalBill
+        '
+        Me.submnu_FinalBill.Index = 1
+        Me.submnu_FinalBill.Shortcut = System.Windows.Forms.Shortcut.CtrlF
+        Me.submnu_FinalBill.Text = "&Final Bill"
+        '
+        'submnu_Seperator
+        '
+        Me.submnu_Seperator.Index = 2
+        Me.submnu_Seperator.Shortcut = System.Windows.Forms.Shortcut.CtrlH
+        Me.submnu_Seperator.Text = "-"
+        '
+        'submnu_ManualBill
+        '
+        Me.submnu_ManualBill.Index = 3
+        Me.submnu_ManualBill.Shortcut = System.Windows.Forms.Shortcut.CtrlM
+        Me.submnu_ManualBill.Text = "&Billing"
+        '
+        'submnu_CashReceipt
+        '
+        Me.submnu_CashReceipt.Index = 4
+        Me.submnu_CashReceipt.Shortcut = System.Windows.Forms.Shortcut.CtrlH
+        Me.submnu_CashReceipt.Text = "C&ash Receipt"
+        Me.submnu_CashReceipt.Visible = False
+        '
+        'MenuItem2
+        '
+        Me.MenuItem2.Index = 5
+        Me.MenuItem2.Text = "-"
+        '
+        'submnu_Accountposting
+        '
+        Me.submnu_Accountposting.Index = 6
+        Me.submnu_Accountposting.Shortcut = System.Windows.Forms.Shortcut.CtrlC
+        Me.submnu_Accountposting.Text = "A&ccount Posting"
+        '
+        'submnu_AutoServicebill
+        '
+        Me.submnu_AutoServicebill.Index = 7
+        Me.submnu_AutoServicebill.Shortcut = System.Windows.Forms.Shortcut.CtrlY
+        Me.submnu_AutoServicebill.Text = "Auto Service Bill"
+        Me.submnu_AutoServicebill.Visible = False
+        '
+        'Menu_Reports
+        '
+        Me.Menu_Reports.Index = 2
+        Me.Menu_Reports.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.Submenu_CROdaliycash, Me.Submenu_Saleregister, Me.Submenu_Unrealisedbill, Me.Submenu_Cashsales, Me.Submenu_Creditsales, Me.Submenu_Couponsales, Me.Submenu_Roomsales, Me.Submenu_ClubACsales, Me.Submnu_Partysales, Me.Submenu_Noncreditsales, Me.Submenu_Reciprocalsales, Me.Submenu_SettlementReport, Me.Submenu_Cashreceipt, Me.Submenu_Manualadjustmentlist, Me.Submenu_Documentprinting})
+        Me.Menu_Reports.Text = "&Reports"
+        '
+        'Submenu_CROdaliycash
+        '
+        Me.Submenu_CROdaliycash.Index = 0
+        Me.Submenu_CROdaliycash.Text = "CRO Daliy Cash"
+        Me.Submenu_CROdaliycash.Visible = False
+        '
+        'Submenu_Saleregister
+        '
+        Me.Submenu_Saleregister.Index = 1
+        Me.Submenu_Saleregister.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.Submnu_Salechecklist, Me.Submnu_Comment1, Me.Submnu_Datewisesales, Me.Submnu_Comment2, Me.Submnu_Vouchersummary, Me.Submnu_Comment3, Me.Submnu_Daywisesales, Me.Submnu_Comment4, Me.Submnu_Itemwisesales, Me.Submnu_Comment5, Me.Submnu_Tobacoosales, Me.Submnu_Comment6, Me.Submnu_Vouchercontrols, Me.Submnu_Comment7, Me.Submnu_Entrycontrols})
+        Me.Submenu_Saleregister.Text = "Sale Register"
+        '
+        'Submnu_Salechecklist
+        '
+        Me.Submnu_Salechecklist.Index = 0
+        Me.Submnu_Salechecklist.Text = "Sale Checklist"
+        '
+        'Submnu_Comment1
+        '
+        Me.Submnu_Comment1.Index = 1
+        Me.Submnu_Comment1.Text = "-"
+        '
+        'Submnu_Datewisesales
+        '
+        Me.Submnu_Datewisesales.Index = 2
+        Me.Submnu_Datewisesales.Text = "Datewise Sales"
+        '
+        'Submnu_Comment2
+        '
+        Me.Submnu_Comment2.Index = 3
+        Me.Submnu_Comment2.Text = "-"
+        '
+        'Submnu_Vouchersummary
+        '
+        Me.Submnu_Vouchersummary.Index = 4
+        Me.Submnu_Vouchersummary.Text = "Voucher - Sum/Detl"
+        '
+        'Submnu_Comment3
+        '
+        Me.Submnu_Comment3.Index = 5
+        Me.Submnu_Comment3.Text = "-"
+        '
+        'Submnu_Daywisesales
+        '
+        Me.Submnu_Daywisesales.Index = 6
+        Me.Submnu_Daywisesales.Text = "Daywise Sales"
+        '
+        'Submnu_Comment4
+        '
+        Me.Submnu_Comment4.Index = 7
+        Me.Submnu_Comment4.Text = "-"
+        '
+        'Submnu_Itemwisesales
+        '
+        Me.Submnu_Itemwisesales.Index = 8
+        Me.Submnu_Itemwisesales.Text = "Itemwise Sales"
+        '
+        'Submnu_Comment5
+        '
+        Me.Submnu_Comment5.Index = 9
+        Me.Submnu_Comment5.Text = "-"
+        '
+        'Submnu_Tobacoosales
+        '
+        Me.Submnu_Tobacoosales.Index = 10
+        Me.Submnu_Tobacoosales.Text = "Tobacoo Sales"
+        Me.Submnu_Tobacoosales.Visible = False
+        '
+        'Submnu_Comment6
+        '
+        Me.Submnu_Comment6.Index = 11
+        Me.Submnu_Comment6.Text = "-"
+        Me.Submnu_Comment6.Visible = False
+        '
+        'Submnu_Vouchercontrols
+        '
+        Me.Submnu_Vouchercontrols.Index = 12
+        Me.Submnu_Vouchercontrols.Text = "Voucher Controls"
+        '
+        'Submnu_Comment7
+        '
+        Me.Submnu_Comment7.Index = 13
+        Me.Submnu_Comment7.Text = "-"
+        '
+        'Submnu_Entrycontrols
+        '
+        Me.Submnu_Entrycontrols.Index = 14
+        Me.Submnu_Entrycontrols.Text = "Entry Controls"
+        Me.Submnu_Entrycontrols.Visible = False
+        '
+        'Submenu_Unrealisedbill
+        '
+        Me.Submenu_Unrealisedbill.Index = 2
+        Me.Submenu_Unrealisedbill.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.Submnu_Unrealiseddaterange, Me.Submnu_Comment9, Me.Submnu_Unrealisedasondate, Me.Submnu_Comment10, Me.Submnu_Unrealisedexcesslist, Me.Submnu_Comment8, Me.Submnu_Unrealisedbillshortlist, Me.Submnu_Comment11, Me.Submnu_UnrealisedbillPendingKOTs})
+        Me.Submenu_Unrealisedbill.Text = "Unrealised Bill"
+        '
+        'Submnu_Unrealiseddaterange
+        '
+        Me.Submnu_Unrealiseddaterange.Index = 0
+        Me.Submnu_Unrealiseddaterange.Text = "Date Range"
+        Me.Submnu_Unrealiseddaterange.Visible = False
+        '
+        'Submnu_Comment9
+        '
+        Me.Submnu_Comment9.Index = 1
+        Me.Submnu_Comment9.Text = "-"
+        Me.Submnu_Comment9.Visible = False
+        '
+        'Submnu_Unrealisedasondate
+        '
+        Me.Submnu_Unrealisedasondate.Index = 2
+        Me.Submnu_Unrealisedasondate.Text = "As On Date"
+        Me.Submnu_Unrealisedasondate.Visible = False
+        '
+        'Submnu_Comment10
+        '
+        Me.Submnu_Comment10.Index = 3
+        Me.Submnu_Comment10.Text = "-"
+        Me.Submnu_Comment10.Visible = False
+        '
+        'Submnu_Unrealisedexcesslist
+        '
+        Me.Submnu_Unrealisedexcesslist.Index = 4
+        Me.Submnu_Unrealisedexcesslist.Text = "Excess List"
+        Me.Submnu_Unrealisedexcesslist.Visible = False
+        '
+        'Submnu_Comment8
+        '
+        Me.Submnu_Comment8.Index = 5
+        Me.Submnu_Comment8.Text = "-"
+        Me.Submnu_Comment8.Visible = False
+        '
+        'Submnu_Unrealisedbillshortlist
+        '
+        Me.Submnu_Unrealisedbillshortlist.Index = 6
+        Me.Submnu_Unrealisedbillshortlist.Text = "Short List"
+        Me.Submnu_Unrealisedbillshortlist.Visible = False
+        '
+        'Submnu_Comment11
+        '
+        Me.Submnu_Comment11.Index = 7
+        Me.Submnu_Comment11.Text = "-"
+        Me.Submnu_Comment11.Visible = False
+        '
+        'Submnu_UnrealisedbillPendingKOTs
+        '
+        Me.Submnu_UnrealisedbillPendingKOTs.Index = 8
+        Me.Submnu_UnrealisedbillPendingKOTs.Text = "Pending KOT's"
+        '
+        'Submenu_Cashsales
+        '
+        Me.Submenu_Cashsales.Index = 3
+        Me.Submenu_Cashsales.Text = "Cash Sales"
+        '
+        'Submenu_Creditsales
+        '
+        Me.Submenu_Creditsales.Index = 4
+        Me.Submenu_Creditsales.Text = "Credit Sales"
+        '
+        'Submenu_Couponsales
+        '
+        Me.Submenu_Couponsales.Index = 5
+        Me.Submenu_Couponsales.Text = "Coupon Sales"
+        '
+        'Submenu_Roomsales
+        '
+        Me.Submenu_Roomsales.Index = 6
+        Me.Submenu_Roomsales.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.Submnu_Roomsaleroomwise, Me.MenuItem20, Me.Submnu_Roomsalesdatewise})
+        Me.Submenu_Roomsales.Text = "Room Sales"
+        '
+        'Submnu_Roomsaleroomwise
+        '
+        Me.Submnu_Roomsaleroomwise.Index = 0
+        Me.Submnu_Roomsaleroomwise.Text = "Room Wise"
+        '
+        'MenuItem20
+        '
+        Me.MenuItem20.Index = 1
+        Me.MenuItem20.Text = "-"
+        '
+        'Submnu_Roomsalesdatewise
+        '
+        Me.Submnu_Roomsalesdatewise.Index = 2
+        Me.Submnu_Roomsalesdatewise.Text = "Date Wise"
+        '
+        'Submenu_ClubACsales
+        '
+        Me.Submenu_ClubACsales.Index = 7
+        Me.Submenu_ClubACsales.Text = "Club A/C Sales"
+        '
+        'Submnu_Partysales
+        '
+        Me.Submnu_Partysales.Index = 8
+        Me.Submnu_Partysales.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.Submnu_Partysalespartywise, Me.Submnu_Comment13, Me.Submnu_Partysalesdatewise})
+        Me.Submnu_Partysales.Text = "Party Sales"
+        '
+        'Submnu_Partysalespartywise
+        '
+        Me.Submnu_Partysalespartywise.Index = 0
+        Me.Submnu_Partysalespartywise.Text = "Party Wise"
+        '
+        'Submnu_Comment13
+        '
+        Me.Submnu_Comment13.Index = 1
+        Me.Submnu_Comment13.Text = "-"
+        '
+        'Submnu_Partysalesdatewise
+        '
+        Me.Submnu_Partysalesdatewise.Index = 2
+        Me.Submnu_Partysalesdatewise.Text = "Date Wise"
+        '
+        'Submenu_Noncreditsales
+        '
+        Me.Submenu_Noncreditsales.Index = 9
+        Me.Submenu_Noncreditsales.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.Submnu_Noncreditsalespartywise, Me.MenuItem23, Me.Submnu_Noncreditsalesdatewise})
+        Me.Submenu_Noncreditsales.Text = "Non Credit Sales"
+        '
+        'Submnu_Noncreditsalespartywise
+        '
+        Me.Submnu_Noncreditsalespartywise.Index = 0
+        Me.Submnu_Noncreditsalespartywise.Text = "Location Wise"
+        '
+        'MenuItem23
+        '
+        Me.MenuItem23.Index = 1
+        Me.MenuItem23.Text = "-"
+        '
+        'Submnu_Noncreditsalesdatewise
+        '
+        Me.Submnu_Noncreditsalesdatewise.Index = 2
+        Me.Submnu_Noncreditsalesdatewise.Text = "Date Wise"
+        '
+        'Submenu_Reciprocalsales
+        '
+        Me.Submenu_Reciprocalsales.Index = 10
+        Me.Submenu_Reciprocalsales.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.Submnu_Reciprocalsaleslocationwise, Me.MenuItem26, Me.Submnu_Reciprocalsalesdatewise})
+        Me.Submenu_Reciprocalsales.Text = "Reciprocal Sales"
+        '
+        'Submnu_Reciprocalsaleslocationwise
+        '
+        Me.Submnu_Reciprocalsaleslocationwise.Index = 0
+        Me.Submnu_Reciprocalsaleslocationwise.Text = "Location Wise"
+        '
+        'MenuItem26
+        '
+        Me.MenuItem26.Index = 1
+        Me.MenuItem26.Text = "-"
+        '
+        'Submnu_Reciprocalsalesdatewise
+        '
+        Me.Submnu_Reciprocalsalesdatewise.Index = 2
+        Me.Submnu_Reciprocalsalesdatewise.Text = "Date Wise"
+        '
+        'Submenu_SettlementReport
+        '
+        Me.Submenu_SettlementReport.Index = 11
+        Me.Submenu_SettlementReport.Text = "Settlement Report"
+        '
+        'Submenu_Cashreceipt
+        '
+        Me.Submenu_Cashreceipt.Enabled = False
+        Me.Submenu_Cashreceipt.Index = 12
+        Me.Submenu_Cashreceipt.Text = "Cash Receipt"
+        Me.Submenu_Cashreceipt.Visible = False
+        '
+        'Submenu_Manualadjustmentlist
+        '
+        Me.Submenu_Manualadjustmentlist.Index = 13
+        Me.Submenu_Manualadjustmentlist.Text = "Manual Adjustment List"
+        Me.Submenu_Manualadjustmentlist.Visible = False
+        '
+        'Submenu_Documentprinting
+        '
+        Me.Submenu_Documentprinting.Index = 14
+        Me.Submenu_Documentprinting.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.Submnu_SelectiveKOT, Me.Submnu_Comment14, Me.Submnu_Selectivefinalbill, Me.Submnu_Comment15, Me.Submnu_Selectivemanualbill, Me.Submnu_Comment16, Me.Submnu_SelectiveCROreceipt, Me.Submnu_Comment17, Me.Submnu_Selectiveroombill})
+        Me.Submenu_Documentprinting.Text = "Document Printing"
+        '
+        'Submnu_SelectiveKOT
+        '
+        Me.Submnu_SelectiveKOT.Index = 0
+        Me.Submnu_SelectiveKOT.Text = "Selective KOTs"
+        '
+        'Submnu_Comment14
+        '
+        Me.Submnu_Comment14.Index = 1
+        Me.Submnu_Comment14.Text = "-"
+        '
+        'Submnu_Selectivefinalbill
+        '
+        Me.Submnu_Selectivefinalbill.Index = 2
+        Me.Submnu_Selectivefinalbill.Text = "Selective Final Bill"
+        '
+        'Submnu_Comment15
+        '
+        Me.Submnu_Comment15.Index = 3
+        Me.Submnu_Comment15.Text = "-"
+        '
+        'Submnu_Selectivemanualbill
+        '
+        Me.Submnu_Selectivemanualbill.Index = 4
+        Me.Submnu_Selectivemanualbill.Text = "Selective Manual Bill"
+        '
+        'Submnu_Comment16
+        '
+        Me.Submnu_Comment16.Index = 5
+        Me.Submnu_Comment16.Text = "-"
+        '
+        'Submnu_SelectiveCROreceipt
+        '
+        Me.Submnu_SelectiveCROreceipt.Index = 6
+        Me.Submnu_SelectiveCROreceipt.Text = "Selective CRO Receipt"
+        Me.Submnu_SelectiveCROreceipt.Visible = False
+        '
+        'Submnu_Comment17
+        '
+        Me.Submnu_Comment17.Index = 7
+        Me.Submnu_Comment17.Text = "-"
+        Me.Submnu_Comment17.Visible = False
+        '
+        'Submnu_Selectiveroombill
+        '
+        Me.Submnu_Selectiveroombill.Index = 8
+        Me.Submnu_Selectiveroombill.Text = "Selective Room Bill"
+        Me.Submnu_Selectiveroombill.Visible = False
+        '
+        'mnu_Utility
+        '
+        Me.mnu_Utility.Index = 3
+        Me.mnu_Utility.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.submnu_Calculator, Me.submnu_Notepad})
+        Me.mnu_Utility.Text = "&Utility"
+        '
+        'submnu_Calculator
+        '
+        Me.submnu_Calculator.Index = 0
+        Me.submnu_Calculator.Shortcut = System.Windows.Forms.Shortcut.CtrlC
+        Me.submnu_Calculator.Text = "Calculator"
+        '
+        'submnu_Notepad
+        '
+        Me.submnu_Notepad.Index = 1
+        Me.submnu_Notepad.Shortcut = System.Windows.Forms.Shortcut.CtrlN
+        Me.submnu_Notepad.Text = "Note Pad"
+        '
+        'mnu_Window
+        '
+        Me.mnu_Window.Index = 4
+        Me.mnu_Window.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.submnu_Horizontal, Me.submnu_Vertical, Me.submnu_Cascade})
+        Me.mnu_Window.Text = "&Window"
+        '
+        'submnu_Horizontal
+        '
+        Me.submnu_Horizontal.Index = 0
+        Me.submnu_Horizontal.Text = "&Horizontal Tile"
+        '
+        'submnu_Vertical
+        '
+        Me.submnu_Vertical.Index = 1
+        Me.submnu_Vertical.Text = "&Vertical Tile"
+        '
+        'submnu_Cascade
+        '
+        Me.submnu_Cascade.Index = 2
+        Me.submnu_Cascade.Text = "&Cascade"
+        '
+        'mnu_Exit
+        '
+        Me.mnu_Exit.Index = 5
+        Me.mnu_Exit.Text = "&Exit"
+        '
+        'MenuItem12
+        '
+        Me.MenuItem12.Index = 6
+        Me.MenuItem12.Text = ""
+        '
+        'OleDbConnection1
+        '
+        Me.OleDbConnection1.ConnectionString = "Jet OLEDB:Global Partial Bulk Ops=2;Jet OLEDB:Registry Path=;Jet OLEDB:Database L" & _
+        "ocking Mode=1;Data Source=""E:\KAMAL\POS\DBS_Key.mdb"";Mode=Share Deny None;Jet OL" & _
+        "EDB:Engine Type=5;Provider=""Microsoft.Jet.OLEDB.4.0"";Jet OLEDB:System database=;" & _
+        "Jet OLEDB:SFP=False;persist security info=False;Extended Properties=;Jet OLEDB:C" & _
+        "ompact Without Replica Repair=False;Jet OLEDB:Encrypt Database=False;Jet OLEDB:C" & _
+        "reate System Database=False;Jet OLEDB:Don't Copy Locale on Compact=False;User ID" & _
+        "=Admin;Jet OLEDB:Global Bulk Transactions=1"
+        '
+        'MDIForm
+        '
+        Me.AutoScaleBaseSize = New System.Drawing.Size(6, 15)
+        Me.ClientSize = New System.Drawing.Size(600, 395)
+        Me.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.KeyPreview = True
+        Me.Menu = Me.MainMenu1
+        Me.Name = "MDIForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
+
+    End Sub
+
+#End Region
+
+    Private Sub MDIForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        MDIParentobj = Me
+        AppPath = Application.StartupPath
+        If Dir(AppPath & "\Reports", FileAttribute.Directory) = "" Then
+            MkDir(AppPath & "\Reports")
+        End If
+        Call FillCompanyinfo()
+        Call GetAccountcode()
+        Me.IsMdiContainer = True
+    End Sub
+    Private Sub GetAccountcode()
+        Dim sqlstring As String
+        sqlstring = "SELECT ISNULL(SDRSCODE,'') AS SDRSCODE,ISNULL(SCRSCODE,'') AS SCRSCODE FROM ACCOUNTSSETUP "
+        gconnection.getDataSet(sqlstring, "ACCOUNTSSETUP")
+        If gdataset.Tables("ACCOUNTSSETUP").Rows.Count > 0 Then
+            gDebitors = Trim(UCase(gdataset.Tables("ACCOUNTSSETUP").Rows(0).Item("SDRSCODE")))
+            gCreditors = Trim(UCase(gdataset.Tables("ACCOUNTSSETUP").Rows(0).Item("SCRSCODE")))
+        Else
+            gDebitors = ""
+            gCreditors = ""
+        End If
+    End Sub
+    Public Sub FillCompanyinfo()
+        Dim sqlstring As String
+        Try
+            If Trim(gDatabase) <> "" Then
+                sqlstring = " SELECT ISNULL(CompanyName,'') AS CompanyName,ISNULL(Fromdate,getdate()) AS Fromdate,ISNULL(Todate,getdate()) AS Todate,ISNULL(Add1,'') AS Add1,ISNULL(Add2,'') AS Add2,"
+                sqlstring = sqlstring & " ISNULL(City,'') AS City,ISNULL(State,'') AS State,ISNULL(Pincode,'') AS Pincode,ISNULL(Datafile,'') AS Datafile FROM ClubMaster WHERE DATAFILE = '" & Trim(gDatabase) & "'"
+            Else
+                sqlstring = " SELECT ISNULL(CompanyName,'') AS CompanyName,ISNULL(Fromdate,getdate()) AS Fromdate,ISNULL(Todate,getdate()) AS Todate,ISNULL(Add1,'') AS Add1,ISNULL(Add2,'') AS Add2,"
+                sqlstring = sqlstring & " ISNULL(City,'') AS City,ISNULL(State,'') AS State,ISNULL(Pincode,'') AS Pincode,ISNULL(Datafile,'') AS Datafile FROM ClubMaster "
+            End If
+            gconnection.getCompanyinfo(sqlstring, "ClubMaster")
+            If gdataset.Tables("ClubMaster").Rows.Count > 0 Then
+                MyCompanyName = Trim(CStr(gdataset.Tables("ClubMaster").Rows(0).Item("CompanyName")))
+                Address1 = Trim(CStr(gdataset.Tables("ClubMaster").Rows(0).Item("Add1")))
+                Address2 = Trim(CStr(gdataset.Tables("ClubMaster").Rows(0).Item("Add2")))
+                gCity = Trim(CStr(gdataset.Tables("ClubMaster").Rows(0).Item("City")))
+                gState = Trim(CStr(gdataset.Tables("ClubMaster").Rows(0).Item("State")))
+                gPincode = Trim(CStr(gdataset.Tables("ClubMaster").Rows(0).Item("Pincode")))
+                gDatabase = Trim(CStr(gdataset.Tables("ClubMaster").Rows(0).Item("Datafile")))
+                Me.Text = MyCompanyName & " [" & "POS" & " ]"
+                If Mid(MyCompanyName, 1, 3) = "HIN" Then
+                    PrintTaxheading1 = "C.F"
+                    PrintTaxheading2 = "CHARGES"
+                Else
+                    PrintTaxheading1 = "SALES"
+                    PrintTaxheading2 = "TAX"
+                End If
+            Else
+                MessageBox.Show("Plz. Contact to your Computer Administrator ", MyCompanyName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1)
+            End If
+        Catch ex As Exception
+            MessageBox.Show(" Check the error :" & ex.Message, MyCompanyName, MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            Exit Sub
+        End Try
+    End Sub
+
+    Private Sub MenuItem1_Select(ByVal sender As Object, ByVal e As System.EventArgs) Handles MenuItem1.Select
+        If UOMMastbool = False Then
+            submnu_UOMmaster.Checked = False
+        End If
+        If TableMastbool = False Then
+            submnu_Tablemaster.Checked = False
+        End If
+        If RateMastbool = False Then
+            submnu_Ratemaster.Checked = False
+        End If
+        If UOMRelabool = False Then
+            submnu_UOMsalerelation.Checked = False
+        End If
+        If ServerMastbool = False Then
+            submnu_Servermaster.Checked = False
+        End If
+        If POSMastbool = False Then
+            submnu_POSmaster.Checked = False
+        End If
+        If Paymentmodebool = False Then
+            submnu_Paymentmode.Checked = False
+        End If
+        If itemtypebool = False Then
+            submnu_Itemtypemaster.Checked = False
+        End If
+        If itemmasterbool = False Then
+            submnu_Itemmaster.Checked = False
+        End If
+        If GroupMasterbool = False Then
+            submnu_Groupmaster.Checked = False
+        End If
+        If subpaymentmodebool = False Then
+            submnu_SubPaymentmode.Checked = False
+        End If
+        If posdocumentbool = False Then
+            submnu_POSdocument.Checked = False
+        End If
+    End Sub
+
+    Private Sub submnu_Calculator_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles submnu_Calculator.Click
+        Shell(Environment.SystemDirectory & "\calc.exe", AppWinStyle.NormalFocus)
+    End Sub
+
+    Private Sub submnu_Notepad_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles submnu_Notepad.Click
+        Shell(Environment.SystemDirectory & "\notepad.exe", AppWinStyle.NormalFocus)
+    End Sub
+
+    Private Sub submnu_Horizontal_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles submnu_Horizontal.Click
+        Me.LayoutMdi(MdiLayout.TileHorizontal)
+        submnu_Horizontal.Checked = True
+        submnu_Vertical.Checked = False
+        submnu_Cascade.Checked = False
+    End Sub
+
+    Private Sub mnu_Exit_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnu_Exit.Click
+        Me.Hide()
+        End
+    End Sub
+
+    Private Sub submnu_Vertical_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles submnu_Vertical.Click
+        Me.LayoutMdi(MdiLayout.TileVertical)
+        submnu_Horizontal.Checked = False
+        submnu_Vertical.Checked = True
+        submnu_Cascade.Checked = False
+    End Sub
+
+    Private Sub submnu_Cascade_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles submnu_Cascade.Click
+        Me.LayoutMdi(MdiLayout.Cascade)
+        submnu_Horizontal.Checked = False
+        submnu_Vertical.Checked = False
+        submnu_Cascade.Checked = True
+    End Sub
+
+    Private Sub submnu_POSmaster_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles submnu_POSmaster.Click
+        Dim POS As New POSMaster
+        If POSMastbool = False And submnu_POSmaster.Checked = True Then
+            POS.FormBorderStyle = FormBorderStyle.FixedDialog
+            POS.MdiParent = Me
+            POS.Show()
+        End If
+        If submnu_POSmaster.Checked = True Then
+            Exit Sub
+        End If
+        POS.FormBorderStyle = FormBorderStyle.FixedDialog
+        POS.MdiParent = Me
+        POS.Show()
+        submnu_POSmaster.Checked = True
+    End Sub
+
+    Private Sub submnu_Groupmaster_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles submnu_Groupmaster.Click
+        Dim GroupMaster As New GroupMaster
+        If GroupMasterbool = False And submnu_Groupmaster.Checked = True Then
+            GroupMaster.FormBorderStyle = FormBorderStyle.FixedDialog
+            GroupMaster.MdiParent = Me
+            GroupMaster.Show()
+            submnu_Groupmaster.Checked = True
+            Exit Sub
+        End If
+        If submnu_Groupmaster.Checked = True Then
+            Exit Sub
+        End If
+        GroupMaster.FormBorderStyle = FormBorderStyle.FixedDialog
+        GroupMaster.MdiParent = Me
+        GroupMaster.Show()
+        submnu_Groupmaster.Checked = True
+    End Sub
+
+    Private Sub submnu_UOMmaster_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles submnu_UOMmaster.Click
+        Dim UOMmaster As New UOMMaster
+        If UOMMastbool = False And submnu_UOMmaster.Checked = True Then
+            UOMmaster.FormBorderStyle = FormBorderStyle.FixedDialog
+            UOMmaster.MdiParent = Me
+            UOMmaster.Show()
+            Exit Sub
+        End If
+        If submnu_UOMmaster.Checked = True Then
+            Exit Sub
+        End If
+        UOMmaster.FormBorderStyle = FormBorderStyle.FixedDialog
+        UOMmaster.MdiParent = Me
+        UOMmaster.Show()
+        submnu_UOMmaster.Checked = True
+    End Sub
+
+    Private Sub submnu_Itemtypemaster_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles submnu_Itemtypemaster.Click
+        Dim itemType As New ItemType
+        If itemtypebool = False And submnu_Itemtypemaster.Checked = True Then
+            itemType.FormBorderStyle = FormBorderStyle.FixedDialog
+            itemType.MdiParent = Me
+            itemType.Show()
+            submnu_Itemtypemaster.Checked = True
+            Exit Sub
+        End If
+        If submnu_Itemtypemaster.Checked = True Then
+            Exit Sub
+        End If
+        itemType.FormBorderStyle = FormBorderStyle.FixedDialog
+        itemType.MdiParent = Me
+        itemType.Show()
+        submnu_Itemtypemaster.Checked = True
+    End Sub
+
+    Private Sub submnu_Itemmaster_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles submnu_Itemmaster.Click
+        Dim itemmaster As New ItemMaster
+        If itemmasterbool = False And submnu_Itemmaster.Checked = True Then
+            itemmaster.FormBorderStyle = FormBorderStyle.FixedDialog
+            itemmaster.MdiParent = Me
+            itemmaster.Show()
+            submnu_Itemmaster.Checked = True
+            Exit Sub
+        End If
+        If submnu_Itemmaster.Checked = True Then
+            Exit Sub
+        End If
+        itemmaster.FormBorderStyle = FormBorderStyle.FixedDialog
+        itemmaster.MdiParent = Me
+        itemmaster.Show()
+        submnu_Itemmaster.Checked = True
+    End Sub
+
+    Private Sub submnu_Ratemaster_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles submnu_Ratemaster.Click
+        Dim Ratemaster As New RateMaster
+        If RateMastbool = False And submnu_Ratemaster.Checked = True Then
+            Ratemaster.FormBorderStyle = FormBorderStyle.FixedDialog
+            submnu_Ratemaster.Checked = True
+            Ratemaster.MdiParent = Me
+            Ratemaster.Show()
+            Exit Sub
+        End If
+        If submnu_Ratemaster.Checked = True Then
+            Exit Sub
+        End If
+        Ratemaster.FormBorderStyle = FormBorderStyle.FixedDialog
+        Ratemaster.MdiParent = Me
+        Ratemaster.Show()
+        submnu_Ratemaster.Checked = True
+    End Sub
+
+    Private Sub submnu_Servermaster_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles submnu_Servermaster.Click
+        Dim ServerMaster As New ServerMaster
+        If ServerMastbool = False And submnu_Servermaster.Checked = True Then
+            ServerMaster.FormBorderStyle = FormBorderStyle.FixedDialog
+            submnu_Servermaster.Checked = True
+            ServerMaster.MdiParent = Me
+            ServerMaster.Show()
+            Exit Sub
+        End If
+        If submnu_Servermaster.Checked = True Then
+            Exit Sub
+        End If
+        ServerMaster.FormBorderStyle = FormBorderStyle.FixedDialog
+        ServerMaster.MdiParent = Me
+        ServerMaster.Show()
+        submnu_Servermaster.Checked = True
+    End Sub
+
+    Private Sub submnu_Tablemaster_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles submnu_Tablemaster.Click
+        Dim TableMaster As New TableMaster
+        If TableMastbool = False And submnu_Tablemaster.Checked = False Then
+            TableMaster.FormBorderStyle = FormBorderStyle.FixedDialog
+            submnu_Tablemaster.Checked = True
+            TableMaster.MdiParent = Me
+            TableMaster.Show()
+            Exit Sub
+        End If
+        If submnu_Tablemaster.Checked = True Then
+            Exit Sub
+        End If
+        TableMaster.FormBorderStyle = FormBorderStyle.FixedDialog
+        TableMaster.MdiParent = Me
+        TableMaster.Show()
+        submnu_Tablemaster.Checked = True
+    End Sub
+
+    Private Sub submnu_POSdocument_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles submnu_POSdocument.Click
+        Dim POSDocument As New POSDocument
+        If posdocumentbool = False And submnu_POSdocument.Checked = False Then
+            POSDocument.FormBorderStyle = FormBorderStyle.FixedDialog
+            submnu_POSdocument.Checked = True
+            POSDocument.MdiParent = Me
+            POSDocument.Show()
+            Exit Sub
+        End If
+        If submnu_POSdocument.Checked = True Then
+            Exit Sub
+        End If
+        POSDocument.FormBorderStyle = FormBorderStyle.FixedDialog
+        POSDocument.MdiParent = Me
+        POSDocument.Show()
+        submnu_POSdocument.Checked = True
+    End Sub
+
+    Private Sub submnu_UOMsalerelation_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles submnu_UOMsalerelation.Click
+        Dim UOMRealation As New SalesUOMRelation
+        If UOMRelabool = False And submnu_UOMsalerelation.Checked = True Then
+            UOMRealation.FormBorderStyle = FormBorderStyle.FixedDialog
+            UOMRealation.MdiParent = Me
+            UOMRealation.Show()
+            Exit Sub
+        End If
+        If submnu_UOMsalerelation.Checked = True Then
+            Exit Sub
+        End If
+        UOMRealation.FormBorderStyle = FormBorderStyle.FixedDialog
+        UOMRealation.MdiParent = Me
+        UOMRealation.Show()
+        submnu_UOMsalerelation.Checked = True
+    End Sub
+
+    Private Sub submnu_Paymentmode_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles submnu_Paymentmode.Click
+        Dim Paymentmode As New PaymentModeMaster
+        If Paymentmodebool = False And submnu_Paymentmode.Checked = True Then
+            Paymentmode.FormBorderStyle = FormBorderStyle.FixedDialog
+            Paymentmode.MdiParent = Me
+            Paymentmode.Show()
+            Exit Sub
+        End If
+        If submnu_Paymentmode.Checked = True Then
+            Exit Sub
+        End If
+        Paymentmode.FormBorderStyle = FormBorderStyle.FixedDialog
+        Paymentmode.MdiParent = Me
+        Paymentmode.Show()
+        submnu_Paymentmode.Checked = True
+    End Sub
+
+    Private Sub submnu_SubPaymentmode_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles submnu_SubPaymentmode.Click
+        Dim subpaymentmode As New SubPaymentMode
+        If subpaymentmodebool = False And submnu_SubPaymentmode.Checked = False Then
+            subpaymentmode.FormBorderStyle = FormBorderStyle.FixedDialog
+            subpaymentmode.MdiParent = Me
+            subpaymentmode.Show()
+            Exit Sub
+        End If
+        If submnu_SubPaymentmode.Checked = True Then
+            Exit Sub
+        End If
+        subpaymentmode.FormBorderStyle = FormBorderStyle.FixedDialog
+        subpaymentmode.MdiParent = Me
+        subpaymentmode.Show()
+        submnu_SubPaymentmode.Checked = True
+    End Sub
+
+    Private Sub submnu_KOTEntry_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles submnu_KOTEntry.Click
+        Dim Kotentry As New KOTEntry("")
+        If kotentrybool = False And submnu_KOTEntry.Checked = False Then
+            Kotentry.FormBorderStyle = FormBorderStyle.FixedDialog
+            Kotentry.MdiParent = Me
+            Kotentry.Show()
+            Exit Sub
+        End If
+        If submnu_KOTEntry.Checked = True Then
+            Exit Sub
+        End If
+        Kotentry.FormBorderStyle = FormBorderStyle.FixedDialog
+        Kotentry.MdiParent = Me
+        Kotentry.Show()
+        submnu_KOTEntry.Checked = True
+    End Sub
+
+    Private Sub submnu_FinalBill_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles submnu_FinalBill.Click
+        Dim Bill As New KOT_Billing
+        If finalbillbool = False And submnu_FinalBill.Checked = False Then
+            Bill.FormBorderStyle = FormBorderStyle.FixedDialog
+            Bill.MdiParent = Me
+            Bill.Show()
+            Exit Sub
+        End If
+        If submnu_FinalBill.Checked = True Then
+            Exit Sub
+        End If
+        Bill.FormBorderStyle = FormBorderStyle.FixedDialog
+        Bill.MdiParent = Me
+        Bill.Show()
+        submnu_FinalBill.Checked = True
+    End Sub
+
+    Private Sub submnu_ManualBill_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles submnu_ManualBill.Click
+        Dim DOCSelection As New DOCSelection
+        DOCSelection.MdiParent = Me
+        DOCSelection.Show()
+        submnu_ManualBill.Checked = True
+    End Sub
+
+    Private Sub submnu_CashReceipt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles submnu_CashReceipt.Click
+        Dim Receipt As New CashReceipt
+        If cashreceiptbool = False And submnu_CashReceipt.Checked = False Then
+            Receipt.FormBorderStyle = FormBorderStyle.FixedDialog
+            Receipt.MdiParent = Me
+            Receipt.Show()
+            Exit Sub
+        End If
+        If submnu_CashReceipt.Checked = True Then
+            Exit Sub
+        End If
+        Receipt.FormBorderStyle = FormBorderStyle.FixedDialog
+        Receipt.MdiParent = Me
+        Receipt.Show()
+        submnu_CashReceipt.Checked = True
+    End Sub
+
+    Private Sub Submnu_Salechecklist_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Submnu_Salechecklist.Click
+        Dim ObjSalesBillChecklist1 As New SalesBillChecklist1
+        ObjSalesBillChecklist1.MdiParent = Me
+        ObjSalesBillChecklist1.Show()
+    End Sub
+
+    Private Sub Submnu_Datewisesales_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Submnu_Datewisesales.Click
+        Dim ObjSalesRegisterDatewise As New SalesRegisterDatewise
+        ObjSalesRegisterDatewise.MdiParent = Me
+        ObjSalesRegisterDatewise.Show()
+    End Sub
+
+    Private Sub Submnu_Vouchersummary_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Submnu_Vouchersummary.Click
+        Dim ObjSaleRegisterVoucherwise As New SaleRegisterVoucherwise
+        ObjSaleRegisterVoucherwise.MdiParent = Me
+        ObjSaleRegisterVoucherwise.Show()
+    End Sub
+
+    Private Sub Submnu_Daywisesales_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Submnu_Daywisesales.Click
+        Dim ObjDaywiseSalesRegister As New DaywiseSalesRegister
+        ObjDaywiseSalesRegister.MdiParent = Me
+        ObjDaywiseSalesRegister.Show()
+    End Sub
+
+    Private Sub Submnu_Itemwisesales_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Submnu_Itemwisesales.Click
+        '    'Dim salebillitemwiseregister As New CrptSaleBillItemwise
+        '    'salebillitemwiseregister.MdiParent = Me
+        '    'salebillitemwiseregister.Show()
+        Dim ObjSaleBillItemwiseRegister As New SaleBillItemwiseRegister
+        ObjSaleBillItemwiseRegister.MdiParent = Me
+        ObjSaleBillItemwiseRegister.Show()
+    End Sub
+
+    Private Sub Submnu_Tobacoosales_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Submnu_Tobacoosales.Click
+
+    End Sub
+
+    Private Sub Submnu_Vouchercontrols_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Submnu_Vouchercontrols.Click
+        Dim ObjVoucherControl As New frmVoucherControl
+        ObjVoucherControl.MdiParent = Me
+        ObjVoucherControl.Show()
+    End Sub
+
+    Private Sub Submnu_Entrycontrols_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Submnu_Entrycontrols.Click
+
+    End Sub
+
+    Private Sub Submnu_Unrealiseddaterange_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Submnu_Unrealiseddaterange.Click
+        Dim ObjUnreleasedBillRegister As New UnreleasedBillRegister
+        ObjUnreleasedBillRegister.MdiParent = Me
+        ObjUnreleasedBillRegister.Show()
+    End Sub
+
+    Private Sub Submnu_Unrealisedasondate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Submnu_Unrealisedasondate.Click
+
+    End Sub
+
+    Private Sub Submnu_Unrealisedexcesslist_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Submnu_Unrealisedexcesslist.Click
+
+    End Sub
+
+    Private Sub Submnu_Unrealisedbillshortlist_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Submnu_Unrealisedbillshortlist.Click
+
+    End Sub
+
+    Private Sub Submnu_UnrealisedbillPendingKOTs_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Submnu_UnrealisedbillPendingKOTs.Click
+        Dim ObjPendingKOTRegister As New PendingKOTRegister
+        ObjPendingKOTRegister.MdiParent = Me
+        ObjPendingKOTRegister.Show()
+    End Sub
+
+    Private Sub Submenu_Cashsales_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Submenu_Cashsales.Click
+        Dim ObjCashSalesRegister As New CashSalesRegister
+        ObjCashSalesRegister.MdiParent = Me
+        ObjCashSalesRegister.Show()
+    End Sub
+
+    Private Sub Submenu_Creditsales_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Submenu_Creditsales.Click
+        Dim ObjCreditSaleRegister As New frmCreditSalesregister
+        ObjCreditSaleRegister.MdiParent = Me
+        ObjCreditSaleRegister.Show()
+    End Sub
+
+    Private Sub Submenu_Couponsales_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Submenu_Couponsales.Click
+        Dim ObjCouponSalesRegister As New CouponSales
+        ObjCouponSalesRegister.MdiParent = Me
+        ObjCouponSalesRegister.Show()
+    End Sub
+
+    Private Sub Submnu_Roomsaleroomwise_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Submnu_Roomsaleroomwise.Click
+        Dim ObjSalesReportRoom As New SalesReportRoom
+        ObjSalesReportRoom.MdiParent = Me
+        ObjSalesReportRoom.Show()
+    End Sub
+
+    Private Sub Submnu_Roomsalesdatewise_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Submnu_Roomsalesdatewise.Click
+        Dim ObjRoomsaleregisterdatewise As New frmRoomsaleregisterdatewise
+        ObjRoomsaleregisterdatewise.MdiParent = Me
+        ObjRoomsaleregisterdatewise.Show()
+    End Sub
+
+    Private Sub Submenu_ClubACsales_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Submenu_ClubACsales.Click
+        Dim SalesReportClubAccount As New SalesReportClubAccount
+        SalesReportClubAccount.MdiParent = Me
+        SalesReportClubAccount.Show()
+    End Sub
+    Private Sub Submnu_Partysalespartywise_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Submnu_Partysalespartywise.Click
+        Dim ObjPartySaleregisterpartywise As New frmPartySaleregisterpartywise
+        ObjPartySaleregisterpartywise.MdiParent = Me
+        ObjPartySaleregisterpartywise.Show()
+    End Sub
+
+    Private Sub Submnu_Partysalesdatewise_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Submnu_Partysalesdatewise.Click
+        Dim ObjPartySaleregisterdatewise As New frmPartySaleregisterdatewise
+        ObjPartySaleregisterdatewise.MdiParent = Me
+        ObjPartySaleregisterdatewise.Show()
+    End Sub
+
+    Private Sub Submnu_Noncreditsalespartywise_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Submnu_Noncreditsalespartywise.Click
+        Dim NonCreditRegister As New NonCreditRegister
+        NonCreditRegister.MdiParent = Me
+        NonCreditRegister.Show()
+    End Sub
+
+    Private Sub Submnu_Noncreditsalesdatewise_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Submnu_Noncreditsalesdatewise.Click
+        Dim ObjDatewiseNonCreditRegister As New frmDatewiseNonCreditRegister
+        ObjDatewiseNonCreditRegister.MdiParent = Me
+        ObjDatewiseNonCreditRegister.Show()
+    End Sub
+
+    Private Sub Submnu_Reciprocalsaleslocationwise_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Submnu_Reciprocalsaleslocationwise.Click
+        Dim ObjReciprocalsaleslocationwise As New ReciprocalClubMemberSalesRegister
+        ObjReciprocalsaleslocationwise.MdiParent = Me
+        ObjReciprocalsaleslocationwise.Show()
+    End Sub
+
+    Private Sub Submnu_Reciprocalsalesdatewise_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Submnu_Reciprocalsalesdatewise.Click
+        Dim ObjReciprocalsalesdatewise As New frmReciprocalSaleDatewise
+        ObjReciprocalsalesdatewise.MdiParent = Me
+        ObjReciprocalsalesdatewise.Show()
+    End Sub
+
+    Private Sub Submenu_Cashreceipt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Submenu_Cashreceipt.Click
+
+    End Sub
+
+    Private Sub Submenu_Manualadjustmentlist_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Submenu_Manualadjustmentlist.Click
+        Dim objmanualbilladjustmentrpt As New rptmanualadjustmentbills
+        objmanualbilladjustmentrpt.MdiParent = Me
+        objmanualbilladjustmentrpt.Show()
+
+    End Sub
+
+    Private Sub Submnu_SelectiveKOT_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Submnu_SelectiveKOT.Click
+        Dim ObjSelectiveKOTReport As New frmSelectiveKOT
+        ObjSelectiveKOTReport.MdiParent = Me
+        ObjSelectiveKOTReport.Show()
+    End Sub
+
+    Private Sub Submnu_Selectivefinalbill_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Submnu_Selectivefinalbill.Click
+        Dim ObjFinalBillReport As New FinalBillReport
+        ObjFinalBillReport.MdiParent = Me
+        ObjFinalBillReport.Show()
+    End Sub
+
+    Private Sub Submnu_Selectivemanualbill_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Submnu_Selectivemanualbill.Click
+        Dim ObjSelectivemanualbill As New frmSelectivemanualbill
+        ObjSelectivemanualbill.MdiParent = Me
+        ObjSelectivemanualbill.Show()
+    End Sub
+
+    Private Sub Submnu_SelectiveCROreceipt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Submnu_SelectiveCROreceipt.Click
+        'Dim ObjSelectiveKOTReport As New frmSelectiveKOT
+        'ObjSelectiveKOTReport.MdiParent = Me
+        'ObjSelectiveKOTReport.Show()
+    End Sub
+
+    Private Sub Submnu_Selectiveroombill_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Submnu_Selectiveroombill.Click
+
+    End Sub
+
+    Private Sub submnu_Accountposting_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles submnu_Accountposting.Click
+        Dim Objaccountposting As New Accountposting
+        If Accountpostingbool = False And submnu_Accountposting.Checked = True Then
+            Objaccountposting.FormBorderStyle = FormBorderStyle.FixedDialog
+            Objaccountposting.MdiParent = Me
+            Objaccountposting.Show()
+            submnu_Accountposting.Checked = True
+            Exit Sub
+        End If
+        If submnu_Accountposting.Checked = True Then
+            Exit Sub
+        End If
+        Objaccountposting.FormBorderStyle = FormBorderStyle.FixedDialog
+        Objaccountposting.MdiParent = Me
+        Objaccountposting.Show()
+        submnu_Accountposting.Checked = True
+    End Sub
+
+    Private Sub submnu_AutoServicebill_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles submnu_AutoServicebill.Click
+        Dim ObjAutoServiceBill As New AutoServicebill
+        If AutoServicebillbool = False And submnu_AutoServicebill.Checked = True Then
+            ObjAutoServiceBill.FormBorderStyle = FormBorderStyle.FixedDialog
+            ObjAutoServiceBill.MdiParent = Me
+            ObjAutoServiceBill.Show()
+            submnu_AutoServicebill.Checked = True
+            Exit Sub
+        End If
+        If submnu_AutoServicebill.Checked = True Then
+            Exit Sub
+        End If
+        ObjAutoServiceBill.FormBorderStyle = FormBorderStyle.FixedDialog
+        ObjAutoServiceBill.MdiParent = Me
+        ObjAutoServiceBill.Show()
+        submnu_AutoServicebill.Checked = True
+    End Sub
+
+    Private Sub Submenu_SettlementReport_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Submenu_SettlementReport.Click
+        Dim objSelectivepaymentmode As New frmSelectivepaymentmode
+        objSelectivepaymentmode.MdiParent = Me
+        objSelectivepaymentmode.Show()
+    End Sub
+
+
+    Private Sub sub_mnupossetupmaster_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sub_mnupossetupmaster.Click
+        Dim objPOSSETUPMASTER As New POSSETUPMASTER
+        If Possetupbool = False And sub_mnupossetupmaster.Checked = False Then
+            objPOSSETUPMASTER.FormBorderStyle = FormBorderStyle.FixedDialog
+            objPOSSETUPMASTER.MdiParent = Me
+            objPOSSETUPMASTER.Show()
+            Exit Sub
+        End If
+        If sub_mnupossetupmaster.Checked = True Then
+            Exit Sub
+        End If
+        objPOSSETUPMASTER.FormBorderStyle = FormBorderStyle.FixedDialog
+        objPOSSETUPMASTER.MdiParent = Me
+        objPOSSETUPMASTER.Show()
+        sub_mnupossetupmaster.Checked = True
+    End Sub
+End Class

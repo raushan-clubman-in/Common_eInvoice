@@ -1,0 +1,1303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>7.10.3077</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6B7AF07D-2706-45A6-AB6F-AE699D68E050}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>Icon_171.ico</ApplicationIcon>
+    <AssemblyKeyContainerName />
+    <AssemblyName>GSTINTEGRATION</AssemblyName>
+    <AssemblyOriginatorKeyFile />
+    <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>Off</OptionStrict>
+    <RootNamespace>GSTINTEGRATION</RootNamespace>
+    <StartupObject>GSTINTEGRATION.LoginForm</StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>0.0</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>GSTINTEGRATION.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile />
+    <DefineConstants />
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>GSTINTEGRATION.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile />
+    <DefineConstants />
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <COMReference Include="MSMask">
+      <Guid>{C932BA88-4374-101B-A56C-00AA003668DC}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+    </COMReference>
+    <COMReference Include="MSXML2">
+      <Guid>{F5078F18-C551-11D3-89B9-0000F81FE221}</Guid>
+      <VersionMajor>3</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+    </COMReference>
+    <Reference Include="AxInterop.FPSpread">
+      <Name>AxInterop.FPSpread</Name>
+      <HintPath>bin\AxInterop.FPSpread.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.FPSpreadADO">
+      <Name>AxInterop.FPSpreadADO</Name>
+      <HintPath>bin\AxInterop.FPSpreadADO.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.FPUSpreadADO">
+      <Name>AxInterop.FPUSpreadADO</Name>
+      <HintPath>bin\AxInterop.FPUSpreadADO.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.MSFlexGridLib">
+      <Name>AxInterop.MSFlexGridLib</Name>
+      <HintPath>bin\AxInterop.MSFlexGridLib.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.MSMask">
+      <Name>AxInterop.MSMask</Name>
+      <HintPath>bin\AxInterop.MSMask.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Interop.ADODB">
+      <Name>Interop.ADODB</Name>
+      <HintPath>bin\Interop.ADODB.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Excel">
+      <Name>Interop.Excel</Name>
+      <HintPath>bin\Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.FPSpread">
+      <Name>Interop.FPSpread</Name>
+      <HintPath>bin\Interop.FPSpread.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.FPSpreadADO">
+      <Name>Interop.FPSpreadADO</Name>
+      <HintPath>bin\Interop.FPSpreadADO.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.FPUSpreadADO">
+      <Name>Interop.FPUSpreadADO</Name>
+      <HintPath>bin\Interop.FPUSpreadADO.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.MSAdodcLib">
+      <Name>Interop.MSAdodcLib</Name>
+      <HintPath>bin\Interop.MSAdodcLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.MSCommLib">
+      <Name>Interop.MSCommLib</Name>
+      <HintPath>bin\Interop.MSCommLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.MSDATASRC">
+      <Name>Interop.MSDATASRC</Name>
+      <HintPath>bin\Interop.MSDATASRC.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.MSFlexGridLib">
+      <Name>Interop.MSFlexGridLib</Name>
+      <HintPath>bin\Interop.MSFlexGridLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.MSXML">
+      <Name>Interop.MSXML</Name>
+      <HintPath>D:\dllref\Interop.MSXML.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.stdole">
+      <Name>Interop.stdole</Name>
+      <HintPath>bin\Interop.stdole.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.Vsa">
+      <Name>Microsoft.VisualBasic.Vsa</Name>
+    </Reference>
+    <Reference Include="MSDATASRC">
+      <Name>msdatasrc</Name>
+      <HintPath>C:\Program Files %28x86%29\Microsoft.NET\Primary Interop Assemblies\msdatasrc.dll</HintPath>
+      <AssemblyFolderKey>hklm\primary interop assemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Name>System.Web.Services</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ACR120U.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Crystal Reports\Couponsale2.vb">
+      <DependentUpon>Couponsale2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Crystal Reports\CrptSaleBillItemwise.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crystal Reports\CrptSalesBillChecklist.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crystal Reports\CrptSalesRegisterDatewise.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crystal Reports\Cry_GSTINNO.vb">
+      <DependentUpon>Cry_GSTINNO.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Crystal Reports\Cry_summary.vb">
+      <DependentUpon>Cry_summary.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Crystal Reports\DataSet1.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Crystal Reports\FSNrpt_cr.vb">
+      <DependentUpon>FSNrpt_cr.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Crystal Reports\POS.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Crystal Reports\ReportViwer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crystal Reports\Rpt_AccountsTaxMaster.vb">
+      <DependentUpon>Rpt_AccountsTaxMaster.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Crystal Reports\SaleItemwiseRegister1.vb">
+      <DependentUpon>SaleItemwiseRegister1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Crystal Reports\SaleRegisterDatewise.vb">
+      <DependentUpon>SaleRegisterDatewise.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Designer\CompanyList1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designer\ExporttoExcel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designer\MDIForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designer\Memberhelp1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designer\ReportDesigner.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designer\UserAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPosKotupdation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlobalClass.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="globalFunction.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GlobalVariables.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ListOperattion1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListOperattion_ITEM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListOperattion_MEMBER.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListOperattion_POS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LOGIN\LoginForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LOGIN\shutdown.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LOGIN\Welcome.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainModules.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Masters\ACCOUNTScateitemTAGGING.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\ACCOUNTSEVENTTAGGING.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\ACCOUNTSINVITEMTAGGING.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\ACCOUNTSITEMTAGGING.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\ACCOUNTSITEMTYPETAGGING.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\ACCOUNTSPAYMENTTAGGING.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\ACCOUNTSSUBSPOSTINGTAGGING.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\BALLTAGGING.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\BOM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\CAMPTAGGING.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\CARTTAGGING.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\CASHBANKTAGGING.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\COACHTAGGING.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\COMPANY MASTER.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\frmPassword.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\GOLFSALEITEMTAGGING.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\GREENFEETAGGING.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\GroupMaster.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\guestregtagging.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\GUESTROOMPAYMODETAGGING.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\GUESTROOMTAGGING.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\HALLMASTER.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\ItemMaster.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\ItemType.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\KOTBOOK.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\PARTYITEMTAGGING.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\PARTYRECEIPTHEAD.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\PaymentModeMaster.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\POSDocument.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\POSMaster.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\PosModuleMaster.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\POSSETUPMASTER.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\RateMaster.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\CashSales.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\CashSalesGroup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\CONTRACT_DETAILS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\CREDITSTOP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\EXPORT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\frmCancelItemRegister.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\frmCashSalesRegister.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\frmCouponSalesRegister.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\frmCreditSalesregister1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\frmCROreceipt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\frmDateRangeSaleregister.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\frmDateRangeUnreleasedBillRegister.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\frmDatewiseNonCreditRegister.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\frmDatewiseRoomsales.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\frmDaywiseSalesRegister.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\frmExcessListUnreleasedBillRegister.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\frmFinalBillReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\frmFSNrpt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\frmItemwisereport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\frmItemwiseSalesRegister.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\frmLedgeraccount.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\frmPartySaleregisterdatewise.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\frmPartySaleregisterpartywise.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\frmPartywiseNonCreditRegister.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\frmPendingKOTRegister.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\frmReciprocalSaleDatewise.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\frmReciprocalSaleLocationwise.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\frmRoomsaleregisterdatewise.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\frmRoomwiseRoomSales.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\frmSalesGroupSummary.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\frmSalesReportClubAccount.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\frmSelectiveKOT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\frmSelectivemanualbill.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\frmSelectivepaymentmode.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\frmServerWiseMember.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\frmServerwisePendingKotRegister.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\frmShortListUnreleasedBillRegister.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\frmSmartCardSalesRegister.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\frmVatServiceTaxreport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\frmVoucherControl.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\GridDesign.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\GSTRUPDATE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\KOTPOSWISEPRINT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\postingaudit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\postingaudittraildet.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\RoomSalesCheckin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\RoomSalesChecklist.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\rptmanualadjustmentbills.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\rptPendingbill.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\SaleRegisterVoucherwise.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\SaleRegisterVoucherwise12.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\sales.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\sales1.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\SalesBillChecklist1 .vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\SalesCheck.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Report\SalesMemberwise.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\SalesUOMRelation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\ServerMaster.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\SubPaymentMode.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\SUBPAYMENTTAGGING.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\SUBSTORE Item Master.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\TableMaster.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\TARIFFTAGGING.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\TAXGROUPMASTER.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\TAXMASTER.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\TOURNAMENTTAGGING.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\TOURNAMENTTAGGINGTOUR.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\UOMMaster.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\VENDORLEDGER.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\VENDORLEDGERmember.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\VENDORLEDGERsubledger.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\Version_Master.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyRoutine.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\BILLREG.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\BILLWISE_TAX.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\CASHSalegROUP.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\CASHSaleReg.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\CashSalesRegisterReport.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\contract_details1.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\CouponSalesRegisterReport.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\CreditSaleRegister.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\Datewisesaleregisterdetails.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\DaySalesRegisterReport.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\finalbillregister.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\ITEMGROUPWISE.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\ManualAdjustmentBill.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\OrdSalesregisterreport.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\pendingkot.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\PendingKOTRegisterReport.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\RoomSalesRegisterUser.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\rptDateWiseNonCreditRegisterReport.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\rptItemmasterchecklist.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\rptItemwisesaleregistergridview.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\rptMemberWisesalereport.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\rptPartysaleregisterdatewise.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\rptPartysaleregisterpartywise.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\rptPartywiseNonCreditRegisterReport.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\rptPaymentmodewise.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\rptPendingbillsummary.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\rptReciprocalLocationwise.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\rptReciprocalSaleRegister.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\rptRoomsaleregisterdatewise.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\rptRoomwisesaleregister.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\rptSaleregistersummary.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\rptSaleregistersummary_TAXTYPE.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\rptServerwisePendingregister.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\rptVoucherwisesaleregister.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\rptVoucherwiseSaleRegisterReport.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\SaleItemwiseRegister2.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\SaleItemwiseRegisterpurchaserate.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\SaleRegisterVoucherwiseReport.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\SalesChecklist1.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\SalesMember.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\SalesRegisterDatewiseReport.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\SalesReportClubAccountReport.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\SmartCardSalesRegisterReport.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsClass\UnreleasedBillRegisterReport.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SMART_READER_SC.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Transactions\Accountposting.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\Accountposting_Others.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\Accountposting_Party.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\Accountposting_Submode.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\AutoServicebill.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\BILLING_CLOSING.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\Billstatus.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\CashReceipt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\Debit_Card_Transaction.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\DOCSelection.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\frmSearch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\KOT Billing.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\KOTEntry.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\ManualBilling.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\Tallytest.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Content Include="Crystal Reports\DataSet1.xsd" />
+    <Content Include="Crystal Reports\POS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>POS.Designer.vb</LastGenOutput>
+    </Content>
+    <Content Include="Icon_171.ico" />
+    <EmbeddedResource Include="Crystal Reports\Couponsale2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Couponsale2.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crystal Reports\CrptSaleBillItemwise.resx">
+      <DependentUpon>CrptSaleBillItemwise.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crystal Reports\CrptSalesBillChecklist.resx">
+      <DependentUpon>CrptSalesBillChecklist.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crystal Reports\CrptSalesRegisterDatewise.resx">
+      <DependentUpon>CrptSalesRegisterDatewise.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crystal Reports\Cry_GSTINNO.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Cry_GSTINNO.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crystal Reports\Cry_summary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Cry_summary.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crystal Reports\FSNrpt_cr.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FSNrpt_cr.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crystal Reports\ReportViwer.resx">
+      <DependentUpon>ReportViwer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crystal Reports\Rpt_AccountsTaxMaster.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rpt_AccountsTaxMaster.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crystal Reports\SaleItemwiseRegister1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SaleItemwiseRegister1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crystal Reports\SaleRegisterDatewise.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SaleRegisterDatewise.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designer\CompanyList1.resx">
+      <DependentUpon>CompanyList1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designer\ExportoExcel.resx" />
+    <EmbeddedResource Include="Designer\ExporttoExcel.resx">
+      <DependentUpon>ExporttoExcel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designer\MDIForm.resx">
+      <DependentUpon>MDIForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designer\Memberhelp1.resx">
+      <DependentUpon>Memberhelp1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designer\ReportDesigner.resx">
+      <DependentUpon>ReportDesigner.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designer\UserAdmin.resx">
+      <DependentUpon>UserAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPosKotupdation.resx">
+      <DependentUpon>frmPosKotupdation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListOperattion1.resx">
+      <DependentUpon>ListOperattion1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListOperattion_ITEM.resx">
+      <DependentUpon>ListOperattion_ITEM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListOperattion_MEMBER.resx">
+      <DependentUpon>ListOperattion_MEMBER.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListOperattion_POS.resx">
+      <DependentUpon>ListOperattion_POS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LOGIN\LoginForm.resx">
+      <DependentUpon>LoginForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LOGIN\shutdown.resx">
+      <DependentUpon>shutdown.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LOGIN\Welcome.resx">
+      <DependentUpon>Welcome.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\ACCOUNTScateitemTAGGING.resx">
+      <DependentUpon>ACCOUNTScateitemTAGGING.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\ACCOUNTSEVENTTAGGING.resx">
+      <DependentUpon>ACCOUNTSEVENTTAGGING.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\ACCOUNTSINVITEMTAGGING.resx">
+      <DependentUpon>ACCOUNTSINVITEMTAGGING.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\ACCOUNTSITEMTAGGING.resx">
+      <DependentUpon>ACCOUNTSITEMTAGGING.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\ACCOUNTSITEMTYPETAGGING.resx">
+      <DependentUpon>ACCOUNTSITEMTYPETAGGING.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\ACCOUNTSPAYMENTTAGGING.resx">
+      <DependentUpon>ACCOUNTSPAYMENTTAGGING.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\ACCOUNTSSUBSPOSTINGTAGGING.resx">
+      <DependentUpon>ACCOUNTSSUBSPOSTINGTAGGING.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\BALLTAGGING.resx">
+      <DependentUpon>BALLTAGGING.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\BOM.resx">
+      <DependentUpon>BOM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\CAMPTAGGING.resx">
+      <DependentUpon>CAMPTAGGING.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\CARTTAGGING.resx">
+      <DependentUpon>CARTTAGGING.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\CASHBANKTAGGING.resx">
+      <DependentUpon>CASHBANKTAGGING.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\COACHTAGGING.resx">
+      <DependentUpon>COACHTAGGING.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\COMPANY MASTER.resx">
+      <DependentUpon>COMPANY MASTER.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\frmPassword.resx">
+      <DependentUpon>frmPassword.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\GOLFSALEITEMTAGGING.resx">
+      <DependentUpon>GOLFSALEITEMTAGGING.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\GREENFEETAGGING.resx">
+      <DependentUpon>GREENFEETAGGING.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\GroupMaster.resx">
+      <DependentUpon>GroupMaster.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\guestregtagging.resx">
+      <DependentUpon>guestregtagging.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\GUESTROOMPAYMODETAGGING.resx">
+      <DependentUpon>GUESTROOMPAYMODETAGGING.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\GUESTROOMTAGGING.resx">
+      <DependentUpon>GUESTROOMTAGGING.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\HALLMASTER.resx">
+      <DependentUpon>HALLMASTER.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\ItemMaster.resx">
+      <DependentUpon>ItemMaster.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\ItemType.resx">
+      <DependentUpon>ItemType.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\KOTBOOK.resx">
+      <DependentUpon>KOTBOOK.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\PARTYITEMTAGGING.resx">
+      <DependentUpon>PARTYITEMTAGGING.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\PARTYRECEIPTHEAD.resx">
+      <DependentUpon>PARTYRECEIPTHEAD.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\PaymentModeMaster.resx">
+      <DependentUpon>PaymentModeMaster.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\POSDocument.resx">
+      <DependentUpon>POSDocument.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\POSMaster.resx">
+      <DependentUpon>POSMaster.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\PosModuleMaster.resx">
+      <DependentUpon>PosModuleMaster.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\POSSETUPMASTER.resx">
+      <DependentUpon>POSSETUPMASTER.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\RateMaster.resx">
+      <DependentUpon>RateMaster.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\CashSales.resx">
+      <DependentUpon>CashSales.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\CashSalesGroup.resx">
+      <DependentUpon>CashSalesGroup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\CONTRACT_DETAILS.resx">
+      <DependentUpon>CONTRACT_DETAILS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\CREDITSTOP.resx">
+      <DependentUpon>CREDITSTOP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\EXPORT.resx">
+      <DependentUpon>EXPORT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\frmCancelItemRegister.resx">
+      <DependentUpon>frmCancelItemRegister.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\frmCashSalesRegister.resx">
+      <DependentUpon>frmCashSalesRegister.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\frmCouponSalesRegister.resx">
+      <DependentUpon>frmCouponSalesRegister.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\frmCreditSalesregister1.resx">
+      <DependentUpon>frmCreditSalesregister1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\frmCROreceipt.resx">
+      <DependentUpon>frmCROreceipt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\frmDateRangeSaleregister.resx">
+      <DependentUpon>frmDateRangeSaleregister.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\frmDateRangeUnreleasedBillRegister.resx">
+      <DependentUpon>frmDateRangeUnreleasedBillRegister.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\frmDatewiseNonCreditRegister.resx">
+      <DependentUpon>frmDatewiseNonCreditRegister.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\frmDatewiseRoomsales.resx">
+      <DependentUpon>frmDatewiseRoomsales.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\frmDaywiseSalesRegister.resx">
+      <DependentUpon>frmDaywiseSalesRegister.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\frmExcessListUnreleasedBillRegister.resx">
+      <DependentUpon>frmExcessListUnreleasedBillRegister.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\frmFinalBillReport.resx">
+      <DependentUpon>frmFinalBillReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\frmFSNrpt.resx">
+      <DependentUpon>frmFSNrpt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\frmItemwisereport.resx">
+      <DependentUpon>frmItemwisereport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\frmItemwiseSalesRegister.resx">
+      <DependentUpon>frmItemwiseSalesRegister.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\frmLedgeraccount.resx">
+      <DependentUpon>frmLedgeraccount.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\frmPartySaleregisterdatewise.resx">
+      <DependentUpon>frmPartySaleregisterdatewise.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\frmPartySaleregisterpartywise.resx">
+      <DependentUpon>frmPartySaleregisterpartywise.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\frmPartywiseNonCreditRegister.resx">
+      <DependentUpon>frmPartywiseNonCreditRegister.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\frmPendingKOTRegister.resx">
+      <DependentUpon>frmPendingKOTRegister.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\frmReciprocalSaleDatewise.resx">
+      <DependentUpon>frmReciprocalSaleDatewise.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\frmReciprocalSaleLocationwise.resx">
+      <DependentUpon>frmReciprocalSaleLocationwise.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\frmRoomsaleregisterdatewise.resx">
+      <DependentUpon>frmRoomsaleregisterdatewise.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\frmRoomwiseRoomSales.resx">
+      <DependentUpon>frmRoomwiseRoomSales.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\frmSalesGroupSummary.resx">
+      <DependentUpon>frmSalesGroupSummary.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\frmSalesReportClubAccount.resx">
+      <DependentUpon>frmSalesReportClubAccount.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\frmSelectiveKOT.resx">
+      <DependentUpon>frmSelectiveKOT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\frmSelectivemanualbill.resx">
+      <DependentUpon>frmSelectivemanualbill.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\frmSelectivepaymentmode.resx">
+      <DependentUpon>frmSelectivepaymentmode.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\frmServerWiseMember.resx">
+      <DependentUpon>frmServerWiseMember.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\frmServerwisePendingKotRegister.resx">
+      <DependentUpon>frmServerwisePendingKotRegister.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\frmShortListUnreleasedBillRegister.resx">
+      <DependentUpon>frmShortListUnreleasedBillRegister.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\frmSmartCardSalesRegister.resx">
+      <DependentUpon>frmSmartCardSalesRegister.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\frmVatServiceTaxreport.resx">
+      <DependentUpon>frmVatServiceTaxreport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\frmVoucherControl.resx">
+      <DependentUpon>frmVoucherControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\GridDesign.resx">
+      <DependentUpon>GridDesign.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\GSTRUPDATE.resx">
+      <DependentUpon>GSTRUPDATE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\KOTPOSWISEPRINT.resx">
+      <DependentUpon>KOTPOSWISEPRINT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\postingaudit.resx">
+      <DependentUpon>postingaudit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\postingaudittraildet.resx">
+      <DependentUpon>postingaudittraildet.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\RoomSalesCheckin.resx">
+      <DependentUpon>RoomSalesCheckin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\RoomSalesChecklist.resx">
+      <DependentUpon>RoomSalesChecklist.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\rptmanualadjustmentbills.resx">
+      <DependentUpon>rptmanualadjustmentbills.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\rptPendingbill.resx">
+      <DependentUpon>rptPendingbill.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\SaleRegisterVoucherwise.resx">
+      <DependentUpon>SaleRegisterVoucherwise.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\SaleRegisterVoucherwise12.resx">
+      <DependentUpon>SaleRegisterVoucherwise12.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\SalesBillChecklist1 .resx">
+      <DependentUpon>SalesBillChecklist1 .vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\SalesCheck.resx">
+      <DependentUpon>SalesCheck.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Report\SalesMemberwise.resx">
+      <DependentUpon>SalesMemberwise.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\SalesUOMRelation.resx">
+      <DependentUpon>SalesUOMRelation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\ServerMaster.resx">
+      <DependentUpon>ServerMaster.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\SubPaymentMode.resx">
+      <DependentUpon>SubPaymentMode.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\SUBPAYMENTTAGGING.resx">
+      <DependentUpon>SUBPAYMENTTAGGING.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\SUBSTORE Item Master.resx">
+      <DependentUpon>SUBSTORE Item Master.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\TableMaster.resx">
+      <DependentUpon>TableMaster.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\TARIFFTAGGING.resx">
+      <DependentUpon>TARIFFTAGGING.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\TAXGROUPMASTER.resx">
+      <DependentUpon>TAXGROUPMASTER.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\TAXMASTER.resx">
+      <DependentUpon>TAXMASTER.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\TOURNAMENTTAGGING.resx">
+      <DependentUpon>TOURNAMENTTAGGING.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\TOURNAMENTTAGGINGTOUR.resx">
+      <DependentUpon>TOURNAMENTTAGGINGTOUR.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\UOMMaster.resx">
+      <DependentUpon>UOMMaster.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\VENDORLEDGER.resx">
+      <DependentUpon>VENDORLEDGER.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\VENDORLEDGERmember.resx">
+      <DependentUpon>VENDORLEDGERmember.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\VENDORLEDGERsubledger.resx">
+      <DependentUpon>VENDORLEDGERsubledger.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\Version_Master.resx">
+      <DependentUpon>Version_Master.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\Accountposting.resx">
+      <DependentUpon>Accountposting.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\Accountposting_Others.resx">
+      <DependentUpon>Accountposting_Others.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\Accountposting_Party.resx">
+      <DependentUpon>Accountposting_Party.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\Accountposting_Submode.resx">
+      <DependentUpon>Accountposting_Submode.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\AutoServicebill.resx">
+      <DependentUpon>AutoServicebill.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\BILLING_CLOSING.resx">
+      <DependentUpon>BILLING_CLOSING.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\Billstatus.resx">
+      <DependentUpon>Billstatus.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\CashReceipt.resx">
+      <DependentUpon>CashReceipt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\Debit_Card_Transaction.resx">
+      <DependentUpon>Debit_Card_Transaction.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\DOCSelection.resx">
+      <DependentUpon>DOCSelection.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\frmSearch.resx">
+      <DependentUpon>frmSearch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\KOT Billing.resx">
+      <DependentUpon>KOT Billing.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\KOTEntry.resx">
+      <DependentUpon>KOTEntry.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\ManualBilling.resx">
+      <DependentUpon>ManualBilling.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\Tallytest.resx">
+      <DependentUpon>Tallytest.vb</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Crystal Reports\POS.xsx">
+      <DependentUpon>POS.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+    <Service Include="{CF845C55-C321-4742-B673-E6212D061ED9}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Crystal Reports\NewFolder1\" />
+    <Folder Include="My Project\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PreBuildEvent />
+    <PostBuildEvent />
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,959 @@
+VERSION 5.00
+Object = "{C95506DC-E7C0-414A-9BCE-9A48E1B4B758}#31.0#0"; "ColorPBar.ocx"
+Object = "{FC369191-4215-11D7-8795-00C1260EF4DA}#1.0#0"; "FRESHBUTTON.OCX"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
+Begin VB.Form Form1 
+   Caption         =   "YENNES Infy"
+   ClientHeight    =   4980
+   ClientLeft      =   3945
+   ClientTop       =   2850
+   ClientWidth     =   7815
+   Icon            =   "frmImport.frx":0000
+   LinkTopic       =   "Form1"
+   ScaleHeight     =   4980
+   ScaleWidth      =   7815
+   Begin MSComDlg.CommonDialog cmd1 
+      Left            =   360
+      Top             =   5640
+      _ExtentX        =   847
+      _ExtentY        =   847
+      _Version        =   393216
+   End
+   Begin VB.Frame Frame1 
+      Height          =   5655
+      Left            =   0
+      TabIndex        =   0
+      Top             =   -120
+      Width           =   8295
+      Begin FreshButton.chameleonButton VchImport 
+         Height          =   615
+         Left            =   2160
+         TabIndex        =   13
+         Top             =   4080
+         Width           =   1455
+         _ExtentX        =   2566
+         _ExtentY        =   1085
+         BTYPE           =   3
+         TX              =   "&Import"
+         ENAB            =   -1  'True
+         BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         COLTYPE         =   1
+         FOCUSR          =   -1  'True
+         BCOL            =   14869218
+         BCOLO           =   14869218
+         FCOL            =   0
+         FCOLO           =   0
+         MCOL            =   12632256
+         MPTR            =   1
+         MICON           =   "frmImport.frx":030A
+         UMCOL           =   -1  'True
+         SOFT            =   0   'False
+         PICPOS          =   0
+         NGREY           =   0   'False
+         FX              =   0
+         HAND            =   0   'False
+         CHECK           =   0   'False
+         VALUE           =   0   'False
+      End
+      Begin ColorProgressBar.ColorPercentBar ColorPercentBar1 
+         Height          =   375
+         Left            =   240
+         TabIndex        =   12
+         Top             =   3480
+         Width           =   7335
+         _ExtentX        =   12938
+         _ExtentY        =   661
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+      End
+      Begin VB.ComboBox cmbVoucherType 
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   360
+         Left            =   2880
+         Style           =   2  'Dropdown List
+         TabIndex        =   8
+         Top             =   2520
+         Width           =   2295
+      End
+      Begin FreshButton.chameleonButton BtnCancel 
+         Height          =   615
+         Left            =   3720
+         TabIndex        =   7
+         Top             =   4080
+         Width           =   1455
+         _ExtentX        =   2566
+         _ExtentY        =   1085
+         BTYPE           =   3
+         TX              =   "&Cancel"
+         ENAB            =   -1  'True
+         BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         COLTYPE         =   1
+         FOCUSR          =   -1  'True
+         BCOL            =   14869218
+         BCOLO           =   14869218
+         FCOL            =   0
+         FCOLO           =   0
+         MCOL            =   12632256
+         MPTR            =   1
+         MICON           =   "frmImport.frx":0326
+         UMCOL           =   -1  'True
+         SOFT            =   0   'False
+         PICPOS          =   0
+         NGREY           =   0   'False
+         FX              =   0
+         HAND            =   0   'False
+         CHECK           =   0   'False
+         VALUE           =   0   'False
+      End
+      Begin FreshButton.chameleonButton BtnImport 
+         Height          =   615
+         Left            =   2160
+         TabIndex        =   6
+         Top             =   4080
+         Width           =   1455
+         _ExtentX        =   2566
+         _ExtentY        =   1085
+         BTYPE           =   3
+         TX              =   "&Import"
+         ENAB            =   -1  'True
+         BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         COLTYPE         =   1
+         FOCUSR          =   -1  'True
+         BCOL            =   14869218
+         BCOLO           =   14869218
+         FCOL            =   0
+         FCOLO           =   0
+         MCOL            =   12632256
+         MPTR            =   1
+         MICON           =   "frmImport.frx":0342
+         UMCOL           =   -1  'True
+         SOFT            =   0   'False
+         PICPOS          =   0
+         NGREY           =   0   'False
+         FX              =   0
+         HAND            =   0   'False
+         CHECK           =   0   'False
+         VALUE           =   0   'False
+      End
+      Begin FreshButton.chameleonButton BtnOpen 
+         Height          =   375
+         Left            =   7320
+         TabIndex        =   5
+         Top             =   1080
+         Width           =   375
+         _ExtentX        =   661
+         _ExtentY        =   661
+         BTYPE           =   3
+         TX              =   "..."
+         ENAB            =   -1  'True
+         BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         COLTYPE         =   1
+         FOCUSR          =   -1  'True
+         BCOL            =   14869218
+         BCOLO           =   14869218
+         FCOL            =   0
+         FCOLO           =   0
+         MCOL            =   12632256
+         MPTR            =   1
+         MICON           =   "frmImport.frx":035E
+         UMCOL           =   -1  'True
+         SOFT            =   0   'False
+         PICPOS          =   0
+         NGREY           =   0   'False
+         FX              =   0
+         HAND            =   0   'False
+         CHECK           =   0   'False
+         VALUE           =   0   'False
+      End
+      Begin VB.ComboBox cmbSheetName 
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   360
+         Left            =   2880
+         Style           =   2  'Dropdown List
+         TabIndex        =   2
+         Top             =   1800
+         Width           =   2295
+      End
+      Begin VB.TextBox txtFileName 
+         Height          =   350
+         Left            =   2880
+         TabIndex        =   1
+         Top             =   1080
+         Width           =   4335
+      End
+      Begin VB.Label Label2 
+         Alignment       =   2  'Center
+         BackColor       =   &H00404000&
+         Caption         =   "Company Name"
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   12
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00FFFFFF&
+         Height          =   375
+         Left            =   0
+         TabIndex        =   11
+         Top             =   120
+         Width           =   7815
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "Select the Voucher Type : "
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00FF0000&
+         Height          =   240
+         Left            =   120
+         TabIndex        =   10
+         Top             =   2520
+         Width           =   2595
+      End
+      Begin VB.Label lblCompanyName 
+         Alignment       =   2  'Center
+         BackColor       =   &H00FFC0C0&
+         Caption         =   "Label1"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   13.5
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   375
+         Left            =   0
+         TabIndex        =   9
+         Top             =   480
+         Width           =   7815
+      End
+      Begin VB.Label Label9 
+         BackStyle       =   0  'Transparent
+         Caption         =   "Select Sheet Name  :"
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00FF0000&
+         Height          =   375
+         Left            =   120
+         TabIndex        =   4
+         Top             =   1800
+         Width           =   2055
+      End
+      Begin VB.Label Label7 
+         AutoSize        =   -1  'True
+         BackColor       =   &H00E0E0E0&
+         Caption         =   "Excel File Name      :"
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00FF0000&
+         Height          =   240
+         Left            =   120
+         TabIndex        =   3
+         Top             =   1080
+         Width           =   1995
+      End
+   End
+End
+Attribute VB_Name = "Form1"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Dim DayRS As New ADODB.Recordset
+Dim EntryRS As New ADODB.Recordset
+Dim xmlDom As New MSXML2.DOMDocument30
+Dim ServerHTTP As New MSXML2.ServerXMLHTTP30
+Dim xmlStr As String
+Dim Con As ADODB.Connection
+Dim InvAmount, Amt, UnitRate, TotAmt, InAmt As Double
+Dim InvNo, InvDt, Quantity, DGod, SGod
+Dim resstr, c
+Dim PortNo As String
+
+Private Sub chameleonButton3_Click()
+End
+End Sub
+
+Private Sub BtnCancel_Click()
+End
+End Sub
+
+Private Sub BtnImport_Click()
+Dim c As Integer
+If Len(cmbSheetName) <> 0 And Len(txtFileName.Text) <> 0 Then
+ColorPercentBar1.Min = 0
+errmsg = False
+If DayRS.State = 1 Then DayRS.Close
+DayRS.Open "Select count(Distinct(VCHNO)) From [" & cmbSheetName.Text & "]", Con, adOpenDynamic, adLockOptimistic, adCmdText
+If DayRS.BOF = False And DayRS.EOF = False Then
+    c = DayRS(0)
+    ColorPercentBar1.Max = c
+End If
+If DayRS.State = 1 Then DayRS.Close
+DayRS.Open "Select distinct(VCHNO) From [" & cmbSheetName.Text & "]", Con, adOpenDynamic, adLockOptimistic, adCmdText
+If DayRS.BOF = False And DayRS.EOF = False Then
+    DayRS.MoveFirst
+    Open App.Path & "\Error.txt" For Output As #1
+        Print #1, "------------------------------------------------------------------------------------------------------------------------"
+        'Print #1, "         Voucher Name         |         Voucher No           |   Error Message"
+        Print #1, "                                  Error Message"
+        Print #1, "------------------------------------------------------------------------------------------------------------------------"
+
+    While DayRS.EOF <> True
+        If IsNull(Trim(DayRS(0))) = False Then
+            InvNo = DayRS(0)
+        Else
+            InvNo = ""
+        End If
+        InvAmount = 0
+        VatAmt = 0
+        Set EntryRS = New ADODB.Recordset
+        If EntryRS.State = 1 Then EntryRS.Close
+        EntryRS.Open "Select * From [" & cmbSheetName.Text & "] where VCHNO=" & InvNo & "", Con, adOpenDynamic, adLockOptimistic, adCmdText
+        If EntryRS.BOF = False And EntryRS.EOF = False Then
+            EntryRS.MoveFirst
+            
+            InvNo = DayRS!VCHNo
+            InvDt = Format(EntryRS!VCHDATE, "yyyyMMdd")
+            PartyName = EntryRS!PARTY
+            LedgerName = EntryRS!LEDGER
+
+            xmlStr = ""
+                        
+            xmlStr = xmlStr & "<ENVELOPE>"
+            xmlStr = xmlStr & "<HEADER>"
+            xmlStr = xmlStr & "<TALLYREQUEST>Import Data</TALLYREQUEST>"
+            xmlStr = xmlStr & "</HEADER>"
+            xmlStr = xmlStr & "<BODY>"
+            xmlStr = xmlStr & "<IMPORTDATA>"
+            xmlStr = xmlStr & "<REQUESTDESC>"
+            xmlStr = xmlStr & "<REPORTNAME>Vouchers</REPORTNAME>"
+            xmlStr = xmlStr & "</REQUESTDESC>"
+            xmlStr = xmlStr & "<REQUESTDATA>"
+            xmlStr = xmlStr & "<TALLYMESSAGE>"
+            xmlStr = xmlStr & "<Voucher  VCHTYPE='" & cmbVoucherType.Text & "' ACTION='Create'>"
+            xmlStr = xmlStr & "<Date>" & InvDt & "</Date>"
+            'xmlStr = xmlStr & "<Narration>this narration</Narration>"
+            xmlStr = xmlStr & "<VoucherTypeName>" & cmbVoucherType.Text & "</VoucherTypeName>"
+            xmlStr = xmlStr & "<VoucherNumber>" & InvNo & "</VoucherNumber>"
+            xmlStr = xmlStr & "<PartyLedgerName>" & PartyName & "</PartyLedgerName>"
+            xmlStr = xmlStr & "<PartyName>" & PartyName & "</PartyName>"
+            xmlStr = xmlStr & "<BasePartyName>" & PartyName & "</BasePartyName>"
+            'xmlStr = xmlStr & "<BasicBuyerNAme>" & PartyName & "</BasicBuyerNAme>"
+            'xmlStr = xmlStr & "<IsOptional>No</IsOptional>"
+            xmlStr = xmlStr & "<EffectiveDate>" & InvDt & "</EffectiveDate>"
+            xmlStr = xmlStr & "<IsInvoice>Yes</IsInvoice>"
+                   
+            
+            While EntryRS.EOF <> True
+                Item = EntryRS!ITEMNAME
+                QTY = EntryRS!QTY
+                UnitRate = EntryRS!Rate
+                'Amt = EntryRS!InvAmt
+                Amt = QTY * UnitRate
+                Amount = Amount + Amt
+                If IsNull(Trim(EntryRS!Godown)) <> True Then
+                    GodownName = EntryRS!Godown
+                Else
+                    GodownName = "Main Location"
+                End If
+'                If IsNull(Trim(EntryRS!InvAmt)) <> True Then
+'                    Amount = Amount + EntryRS!InvAmt
+'                Else
+'                    Amount = Amount + 0
+'                End If
+'                If IsNull(Trim(EntryRS!Vat)) <> True Then
+'                    vatamt = vatamt + EntryRS!Vat
+'                Else
+'                    vatamt = vatamt + 0
+'                End If
+                xmlStr = xmlStr & "<ALLInventoryEntries.LIST>"
+                xmlStr = xmlStr & "<StockItemName>" & Item & "</StockItemName>"
+                If cmbVoucherType.ListIndex = 0 Then
+                    xmlStr = xmlStr & "<IsDeemedPositive>No</IsDeemedPositive>"
+                    xmlStr = xmlStr & "<Amount>" & Amt & "</Amount>"
+                ElseIf cmbVoucherType.ListIndex = 1 Then
+                    xmlStr = xmlStr & "<IsDeemedPositive>Yes</IsDeemedPositive>"
+                    xmlStr = xmlStr & "<Amount>-" & Amt & "</Amount>"
+                End If
+                xmlStr = xmlStr & "<Rate>" & UnitRate & "</Rate>"
+                xmlStr = xmlStr & "<ActualQty>" & QTY & "</ActualQty>"
+                xmlStr = xmlStr & "<BilledQty>" & QTY & "</BilledQty>"
+                xmlStr = xmlStr & "<AccountingAllocations.LIST>"
+                xmlStr = xmlStr & "<LedgerName>" & LedgerName & "</LedgerName>"
+                If cmbVoucherType.ListIndex = 0 Then
+                    xmlStr = xmlStr & "<IsDeemedPositive>No</IsDeemedPositive>"
+                    xmlStr = xmlStr & "<Amount>" & Amt & "</Amount>"
+                ElseIf cmbVoucherType.ListIndex = 1 Then
+                    xmlStr = xmlStr & "<IsDeemedPositive>Yes</IsDeemedPositive>"
+                    xmlStr = xmlStr & "<Amount>-" & Amt & "</Amount>"
+                End If
+                    xmlStr = xmlStr & "<IsPartyLedger>No</IsPartyLedger>"
+                    xmlStr = xmlStr & "</AccountingAllocations.LIST>"
+                xmlStr = xmlStr & "<BatchAllocations.LIST>"
+                xmlStr = xmlStr & "<GodownName>" & GodownName & "</GodownName>"
+                xmlStr = xmlStr & "<BatchName>Primary Batch</BatchName>"
+                'xmlStr = xmlStr & "<DestinationGodownName>Godown1</DestinationGodownName>"
+                If cmbVoucherType.ListIndex = 0 Then
+                    xmlStr = xmlStr & "<Amount>" & Amt & "</Amount>"
+                ElseIf cmbVoucherType.ListIndex = 1 Then
+                    xmlStr = xmlStr & "<Amount>-" & Amt & "</Amount>"
+                End If
+                xmlStr = xmlStr & "<ActualQty>" & QTY & "</ActualQty>"
+                xmlStr = xmlStr & "<BilledQty>" & QTY & "</BilledQty>"
+                xmlStr = xmlStr & "</BatchAllocations.LIST>"
+                xmlStr = xmlStr & "</ALLInventoryEntries.LIST>"
+                
+                EntryRS.MoveNext
+            Wend
+                VatAmt = Amount * 4 / 100
+                Amount = Amount + VatAmt
+                'If IsNull(Trim(vatamt)) <> True Then Amount = Amount + vatamt
+                xmlStr = xmlStr & "<LedgerEntries.LIST>"
+                xmlStr = xmlStr & "<LedgerName>" & PartyName & "</LedgerName>"
+                If cmbVoucherType.ListIndex = 0 Then
+                    xmlStr = xmlStr & "<IsDeemedPositive>Yes</IsDeemedPositive>"
+                    xmlStr = xmlStr & "<Amount>-" & Amount & "</Amount>"
+                ElseIf cmbVoucherType.ListIndex = 1 Then
+                    xmlStr = xmlStr & "<IsDeemedPositive>No</IsDeemedPositive>"
+                    xmlStr = xmlStr & "<Amount>" & Amount & "</Amount>"
+                End If
+                xmlStr = xmlStr & "<IsPartyLedger>Yes</IsPartyLedger>"
+                xmlStr = xmlStr & "</LedgerEntries.LIST>"
+                
+                xmlStr = xmlStr & "<LedgerEntries.LIST>"
+                xmlStr = xmlStr & "<LedgerName>Vat</LedgerName>"
+                If cmbVoucherType.ListIndex = 0 Then
+                    xmlStr = xmlStr & "<IsDeemedPositive>No</IsDeemedPositive>"
+                    xmlStr = xmlStr & "<Amount>" & VatAmt & "</Amount>"
+                ElseIf cmbVoucherType.ListIndex = 1 Then
+                    xmlStr = xmlStr & "<IsDeemedPositive>Yes</IsDeemedPositive>"
+                    xmlStr = xmlStr & "<Amount>-" & VatAmt & "</Amount>"
+                End If
+                xmlStr = xmlStr & "<IsPartyLedger>No</IsPartyLedger>"
+                xmlStr = xmlStr & "</LedgerEntries.LIST>"
+                
+                xmlStr = xmlStr & "</Voucher>"
+                xmlStr = xmlStr & "</TALLYMESSAGE>"
+                xmlStr = xmlStr & "</REQUESTDATA>"
+                xmlStr = xmlStr & "</IMPORTDATA>"
+                xmlStr = xmlStr & "</BODY>"
+                xmlStr = xmlStr & "</ENVELOPE>"
+                     
+                Set ServerHTTP = New MSXML2.ServerXMLHTTP30
+                ServerHTTP.Open "POST", "http://localhost:" & 9000
+                'xmlStr = xmlStr & xmlstr2 & xmlstr3 & xmlstr4
+                ServerHTTP.send xmlStr
+
+
+                resstr = ServerHTTP.responseText
+'                Print #1, xmlStr
+                xmlDom.loadXML (resstr)
+
+                Set childNodes = xmlDom.selectNodes("/RESPONSE/LINEERROR")
+                If (childNodes.length > 0) Then
+                    errorstr = ""
+                    For j = 0 To childNodes.length - 1
+                        errorstr = errorstr & childNodes(j).Text & " "
+                        errmsg = True
+                    Next
+                    Print #1, vbTab & "Voucher No  : " & InvNo & vbTab & Right(errorstr, (Len(errorstr) - 3))
+                    Print #1, "---------------------------------------------------------------------------------------"
+                End If
+
+            End If
+            Print #1, "========================================================================="
+            ColorPercentBar1.Value = ColorPercentBar1.Value + 1
+            'MsgBox ColorPercentBar1.Value
+        DayRS.MoveNext
+    Wend
+End If
+If errmsg = True Then
+   MsgBox "Import Not Successfully"
+   Shell "notepad.exe " & App.Path & "\Error.txt", vbMaximizedFocus
+   Close #1
+   Exit Sub
+Else
+   MsgBox "Import Successfully"
+   Close #1
+   End
+End If
+End If
+End Sub
+
+Private Sub BtnOpen_Click()
+cmd1.Filter = "Microsoft ExcelFiles (*.xls)|*.xls"
+cmd1.ShowOpen
+txtFileName.Text = cmd1.FileName
+End Sub
+
+Private Sub chameleonButton1_Click()
+
+End Sub
+
+Private Sub cmbSheetName_GotFocus()
+If Len(Trim(txtFileName.Text)) = 0 Then
+    MsgBox "Select Excel File name", vbInformation, "Yennes"
+    Exit Sub
+Else
+    Set xlsTable = New ADOX.Catalog
+    Set Con = New ADODB.Connection
+    Con.Provider = "MSDASQL"
+    Con.ConnectionString = "Driver={Microsoft Excel Driver (*.xls)};DBQ=" & Trim(txtFileName.Text) & "; ReadOnly=False;"
+    Con.Open
+    xlsTable.ActiveConnection = Con
+    cmbSheetName.Clear
+    For Each Table In xlsTable.Tables
+        If Table.Type = "SYSTEM TABLE" Then
+            cmbSheetName.AddItem Table.Name
+        Else
+            cmbSheetName.AddItem Table.Name
+        End If
+    Next
+    If cmbSheetName.ListCount > 0 Then cmbSheetName.ListIndex = 0
+End If
+End Sub
+
+Private Sub Form_Load()
+PortNo = InputBox("Enter the PortNo", "YENNES Infy", 9000)
+If Len(Trim(PortNo)) = 0 Then
+    End
+Else
+    Set Con = New ADODB.Connection
+    Set RS = New ADODB.Recordset
+    If Con.State = 1 Then Con.Close
+    Con.ConnectionString = "TallyODBC_" & PortNo
+    Con.Open
+    If RS.State = 1 Then RS.Close
+    RS.Open "Select $Name From Company", Con, adOpenDynamic, adLockOptimistic, adCmdText
+    lblCompanyName.Caption = RS(0)
+End If
+cmbVoucherType.AddItem "Sales"
+cmbVoucherType.AddItem "Purchase"
+cmbVoucherType.AddItem "Stock Journal"
+If cmbVoucherType.ListCount > 0 Then cmbVoucherType.ListIndex = 0
+ColorPercentBar1.Value = 0
+End Sub
+
+Private Function Funamp(str As String) As String
+Dim str1, str2 As String
+Dim i As Integer
+    str1 = str
+    i = 1
+    While i <> 0
+        i = InStr(1, str1, "&")
+        If i <> 0 Then
+            str2 = str2 & Left(str1, i) & "amp;"
+        End If
+        str1 = Right(str1, (Len(str1) - i))
+    Wend
+    Funamp = str2 & str1
+End Function
+
+Private Function Funapos(str As String) As String
+Dim str1, str2 As String
+Dim i As Integer
+    str1 = str
+    i = 1
+    While i <> 0
+        i = InStr(1, str1, "'")
+        If i <> 0 Then
+            str2 = str2 & Left(str1, (i - 1)) & "&apos;"
+        End If
+        str1 = Right(str1, (Len(str1) - i))
+    Wend
+    Funapos = str2 & str1
+End Function
+
+Private Sub VchImport_Click()
+Dim c As Integer
+If Len(cmbSheetName) <> 0 And Len(txtFileName.Text) <> 0 Then
+ColorPercentBar1.Min = 0
+ColorPercentBar1.Value = 0
+errmsg = False
+If DayRS.State = 1 Then DayRS.Close
+DayRS.Open "Select Distinct(VCHNO) From [" & cmbSheetName.Text & "]", Con, adOpenDynamic, adLockOptimistic, adCmdText
+If DayRS.BOF = False And DayRS.EOF = False Then
+    c = 0
+    DayRS.MoveFirst
+    While DayRS.EOF <> True
+        c = c + 1
+        DayRS.MoveNext
+    Wend
+End If
+ColorPercentBar1.Max = c
+If DayRS.State = 1 Then DayRS.Close
+If cmbVoucherType.ListIndex = 2 Then
+    DayRS.Open "Select * From [" & cmbSheetName.Text & "]", Con, adOpenDynamic, adLockOptimistic, adCmdText
+    If DayRS.BOF = False And DayRS.EOF = False Then
+        Open App.Path & "\Error.txt" For Output As #1
+        Print #1, "------------------------------------------------------------------------------------------------------------------------"
+        DayRS.MoveFirst
+        While DayRS.EOF <> True
+            InvNo = Trim(DayRS!VCHNo)
+            InvDt = Format(Trim(DayRS!VCHDATE), "yyyyMMdd")
+            VType = "Stock Journal"
+            Item = Trim(DayRS!ITEMNAME)
+            Quantity = DayRS!QTY
+            UnitRate = DayRS!Rate
+            'MsgBox DayRS.EOF
+            SGod = Funapos(Funamp(Trim(DayRS!SGodown)))
+            DGod = Funapos(Funamp(Trim(DayRS!DGodown)))
+            Amt = Format(Val(Quantity * UnitRate), "############.00")
+            xmlStr = ""
+            xmlStr = xmlStr & "<ENVELOPE>"
+            xmlStr = xmlStr & "<HEADER>"
+            xmlStr = xmlStr & "<TALLYREQUEST>Import Data</TALLYREQUEST>"
+            xmlStr = xmlStr & "</HEADER>"
+            xmlStr = xmlStr & "<BODY>"
+            xmlStr = xmlStr & "<IMPORTDATA>"
+            xmlStr = xmlStr & "<REQUESTDESC>"
+            xmlStr = xmlStr & "<REPORTNAME>Vouchers</REPORTNAME>"
+            xmlStr = xmlStr & "</REQUESTDESC>"
+            xmlStr = xmlStr & "<REQUESTDATA>"
+            xmlStr = xmlStr & "<TALLYMESSAGE>"
+            xmlStr = xmlStr & "<Voucher VCHTYPE='" & VType & "' ACTION='Create'>"
+            xmlStr = xmlStr & "<Date>" & InvDt & "</Date>"
+            xmlStr = xmlStr & "<VoucherTypeName>" & VType & "</VoucherTypeName>"
+            xmlStr = xmlStr & "<VoucherNumber>" & InvNo & "</VoucherNumber>"
+            'xmlStr = xmlStr & "<DestinationGodown>Godown2</DestinationGodown>"
+            xmlStr = xmlStr & "<EffectiveDate>" & InvDt & "</EffectiveDate>"
+            xmlStr = xmlStr & "<IsInvoice>No</IsInvoice>"
+            xmlStr = xmlStr & "<InventoryEntriesIn.LIST>"
+            xmlStr = xmlStr & "<StockItemName>" & Item & "</StockItemName>"
+            xmlStr = xmlStr & "<IsDeemedPositive>Yes</IsDeemedPositive>"
+            xmlStr = xmlStr & "<Rate>" & UnitRate & "</Rate>"
+            xmlStr = xmlStr & "<Amount>-" & Amt & "</Amount>"
+            xmlStr = xmlStr & "<ActualQty>" & Quantity & "</ActualQty>"
+            xmlStr = xmlStr & "<BilledQty>" & Quantity & "</BilledQty>"
+            xmlStr = xmlStr & "<BatchAllocations.LIST>"
+            xmlStr = xmlStr & "<GodownName>" & DGod & "</GodownName>"
+            xmlStr = xmlStr & "<BatchName>Primary Batch</BatchName>"
+            xmlStr = xmlStr & "<DestinationGodownName>" & DGod & "</DestinationGodownName>"
+            xmlStr = xmlStr & "<Amount>-" & Amt & "</Amount>"
+            xmlStr = xmlStr & "<ActualQty>" & Quantity & "</ActualQty>"
+            xmlStr = xmlStr & "<BilledQty>" & Quantity & "</BilledQty>"
+            xmlStr = xmlStr & "</BatchAllocations.LIST>"
+            xmlStr = xmlStr & "</InventoryEntriesIn.LIST>"
+            xmlStr = xmlStr & "<InventoryEntriesOut.LIST>"
+            xmlStr = xmlStr & "<StockItemName>" & Item & "</StockItemName>"
+            xmlStr = xmlStr & "<IsDeemedPositive>No</IsDeemedPositive>"
+            xmlStr = xmlStr & "<Rate>" & UnitRate & "</Rate>"
+            xmlStr = xmlStr & "<Amount>" & Amt & "</Amount>"
+            xmlStr = xmlStr & "<ActualQty>" & Quantity & "</ActualQty>"
+            xmlStr = xmlStr & "<BilledQty>" & Quantity & "</BilledQty>"
+            xmlStr = xmlStr & "<BatchAllocations.LIST>"
+            xmlStr = xmlStr & "<GodownName>" & SGod & "</GodownName>"
+            xmlStr = xmlStr & "<BatchName>Primary Batch</BatchName>"
+            xmlStr = xmlStr & "<Amount>" & Amt & "</Amount>"
+            xmlStr = xmlStr & "<ActualQty>" & Quantity & "</ActualQty>"
+            xmlStr = xmlStr & "<BilledQty>" & Quantity & "</BilledQty>"
+            xmlStr = xmlStr & "</BatchAllocations.LIST>"
+            xmlStr = xmlStr & "</InventoryEntriesOut.LIST>"
+            xmlStr = xmlStr & "</Voucher>"
+            xmlStr = xmlStr & "</TALLYMESSAGE>"
+            xmlStr = xmlStr & "</REQUESTDATA>"
+            xmlStr = xmlStr & "</IMPORTDATA>"
+            xmlStr = xmlStr & "</BODY>"
+            xmlStr = xmlStr & "</ENVELOPE>"
+                        
+            Set ServerHTTP = New MSXML2.ServerXMLHTTP30
+            ServerHTTP.Open "POST", "http://localhost:" & PortNo
+            ServerHTTP.send xmlStr
+            resstr = ServerHTTP.responseText
+            xmlDom.loadXML (resstr)
+            Set childNodes = xmlDom.selectNodes("/RESPONSE/LINEERROR")
+            If (childNodes.length > 0) Then
+                errorstr = ""
+                For j = 0 To childNodes.length - 1
+                errorstr = errorstr & childNodes(j).Text & " "
+                errmsg = True
+                Next
+                Print #1, vbTab & "Voucher No  : " & InvNo & vbTab & Right(errorstr, (Len(errorstr) - 3))
+                'Print #1, "---------------------------------------------------------------------------------------"
+            End If
+            Print #1, "========================================================================="
+            ColorPercentBar1.Value = ColorPercentBar1.Value + 1
+            'MsgBox ColorPercentBar1.Value
+            
+            DayRS.MoveNext
+            'MsgBox DayRS.EOF
+        Wend
+    End If
+    
+Else
+DayRS.Open "Select Distinct(VCHNO) From [" & cmbSheetName.Text & "]", Con, adOpenDynamic, adLockOptimistic, adCmdText
+If DayRS.BOF = False And DayRS.EOF = False Then
+    DayRS.MoveFirst
+    Open App.Path & "\Error.txt" For Output As #1
+        Print #1, "------------------------------------------------------------------------------------------------------------------------"
+        'Print #1, "         Voucher Name         |         Voucher No           |   Error Message"
+        Print #1, "                                  Error Message"
+        Print #1, "------------------------------------------------------------------------------------------------------------------------"
+
+    While DayRS.EOF <> True
+        InvNo = DayRS(0)
+        'MsgBox InvNo
+        Set EntryRS = New ADODB.Recordset
+        If EntryRS.State = 1 Then EntryRS.Close
+        EntryRS.Open "Select * From [" & cmbSheetName.Text & "]where VCHNO=" & InvNo & "", Con, adOpenDynamic, adLockOptimistic, adCmdText
+        If EntryRS.BOF = False And EntryRS.EOF = False Then
+            EntryRS.MoveFirst
+            InvAmount = 0
+            TotAmt = 0
+            VatAmt = 0
+            InvNo = DayRS!VCHNo
+            InvDt = Format(EntryRS!VCHDATE, "yyyyMMdd")
+            PartyName = EntryRS!PARTY
+            LedgerName = EntryRS!LEDGER
+
+            xmlStr = ""
+                        
+            xmlStr = xmlStr & "<ENVELOPE>"
+            xmlStr = xmlStr & "<HEADER>"
+            xmlStr = xmlStr & "<TALLYREQUEST>Import Data</TALLYREQUEST>"
+            xmlStr = xmlStr & "</HEADER>"
+            xmlStr = xmlStr & "<BODY>"
+            xmlStr = xmlStr & "<IMPORTDATA>"
+            xmlStr = xmlStr & "<REQUESTDESC>"
+            xmlStr = xmlStr & "<REPORTNAME>Vouchers</REPORTNAME>"
+            xmlStr = xmlStr & "</REQUESTDESC>"
+            xmlStr = xmlStr & "<REQUESTDATA>"
+            xmlStr = xmlStr & "<TALLYMESSAGE>"
+            xmlStr = xmlStr & "<Voucher  VCHTYPE='" & cmbVoucherType.Text & "' ACTION='Create'>"
+            xmlStr = xmlStr & "<Date>" & InvDt & "</Date>"
+            'xmlStr = xmlStr & "<Narration>this narration</Narration>"
+            xmlStr = xmlStr & "<VoucherTypeName>" & cmbVoucherType.Text & "</VoucherTypeName>"
+            xmlStr = xmlStr & "<VoucherNumber>" & InvNo & "</VoucherNumber>"
+            xmlStr = xmlStr & "<PartyLedgerName>" & PartyName & "</PartyLedgerName>"
+            xmlStr = xmlStr & "<PartyName>" & PartyName & "</PartyName>"
+            xmlStr = xmlStr & "<BasePartyName>" & PartyName & "</BasePartyName>"
+            'xmlStr = xmlStr & "<BasicBuyerNAme>" & PartyName & "</BasicBuyerNAme>"
+            'xmlStr = xmlStr & "<IsOptional>No</IsOptional>"
+            xmlStr = xmlStr & "<EffectiveDate>" & InvDt & "</EffectiveDate>"
+            xmlStr = xmlStr & "<IsInvoice>Yes</IsInvoice>"
+                    
+            
+            While EntryRS.EOF <> True
+                InAmt = 0
+                Amt = 0
+                UnitRate = 0
+                If IsNull(Trim(EntryRS!ITEMNAME)) <> True And IsNull(Trim(EntryRS!QTY)) <> True Then
+                    Item = EntryRS!ITEMNAME
+                    Quantity = EntryRS!QTY
+                    InAmt = Format(EntryRS!invamt, "###########.00")
+                Else
+                    MsgBox "Item Details Not Found"
+                End If
+                Amt = Format(Val(InAmt / 110 * 100), "##########.00")
+                UnitRate = Format(Val(Amt / Quantity), "###########.00")
+                TotAmt = TotAmt + InAmt
+                'Amt = EntryRS!InvAmt
+                
+                InvAmount = Format(Val(InvAmount) + Val(Amt), "###########.00")
+                If IsNull(Trim(EntryRS!Godown)) <> True Then
+                    GodownName = EntryRS!Godown
+                Else
+                    GodownName = "Main Location"
+                End If
+'                If IsNull(Trim(EntryRS!InvAmt)) <> True Then
+'                    Amount = Amount + EntryRS!InvAmt
+'                Else
+'                    Amount = Amount + 0
+'                End If
+'                If IsNull(Trim(EntryRS!Vat)) <> True Then
+'                    vatamt = vatamt + EntryRS!Vat
+'                Else
+'                    vatamt = vatamt + 0
+'                End If
+                xmlStr = xmlStr & "<ALLInventoryEntries.LIST>"
+                xmlStr = xmlStr & "<StockItemName>" & Item & "</StockItemName>"
+                If cmbVoucherType.ListIndex = 0 Then
+                    xmlStr = xmlStr & "<IsDeemedPositive>No</IsDeemedPositive>"
+                    xmlStr = xmlStr & "<Amount>" & Amt & "</Amount>"
+                ElseIf cmbVoucherType.ListIndex = 1 Then
+                    xmlStr = xmlStr & "<IsDeemedPositive>Yes</IsDeemedPositive>"
+                    xmlStr = xmlStr & "<Amount>-" & Amt & "</Amount>"
+                End If
+                xmlStr = xmlStr & "<Rate>" & UnitRate & "/Nos</Rate>"
+                xmlStr = xmlStr & "<ActualQty>" & Quantity & " Nos</ActualQty>"
+                xmlStr = xmlStr & "<BilledQty>" & Quantity & " Nos</BilledQty>"
+                xmlStr = xmlStr & "<AccountingAllocations.LIST>"
+                xmlStr = xmlStr & "<LedgerName>" & LedgerName & "</LedgerName>"
+                If cmbVoucherType.ListIndex = 0 Then
+                    xmlStr = xmlStr & "<IsDeemedPositive>No</IsDeemedPositive>"
+                    xmlStr = xmlStr & "<Amount>" & Amt & "</Amount>"
+                ElseIf cmbVoucherType.ListIndex = 1 Then
+                    xmlStr = xmlStr & "<IsDeemedPositive>Yes</IsDeemedPositive>"
+                    xmlStr = xmlStr & "<Amount>-" & Amt & "</Amount>"
+                End If
+                    xmlStr = xmlStr & "<IsPartyLedger>No</IsPartyLedger>"
+                    xmlStr = xmlStr & "</AccountingAllocations.LIST>"
+                xmlStr = xmlStr & "<BatchAllocations.LIST>"
+                xmlStr = xmlStr & "<GodownName>" & GodownName & "</GodownName>"
+                xmlStr = xmlStr & "<BatchName>Primary Batch</BatchName>"
+                'xmlStr = xmlStr & "<DestinationGodownName>Godown1</DestinationGodownName>"
+                If cmbVoucherType.ListIndex = 0 Then
+                    xmlStr = xmlStr & "<Amount>" & Amt & "</Amount>"
+                ElseIf cmbVoucherType.ListIndex = 1 Then
+                    xmlStr = xmlStr & "<Amount>-" & Amt & "</Amount>"
+                End If
+                xmlStr = xmlStr & "<ActualQty>" & Quantity & " Nos</ActualQty>"
+                xmlStr = xmlStr & "<BilledQty>" & Quantity & " Nos</BilledQty>"
+                xmlStr = xmlStr & "</BatchAllocations.LIST>"
+                xmlStr = xmlStr & "</ALLInventoryEntries.LIST>"
+                
+                EntryRS.MoveNext
+            Wend
+                VatAmt = TotAmt - InvAmount
+                InvAmount = InvAmount + VatAmt
+                'If IsNull(Trim(vatamt)) <> True Then Amount = Amount + vatamt
+                xmlStr = xmlStr & "<LedgerEntries.LIST>"
+                xmlStr = xmlStr & "<LedgerName>" & PartyName & "</LedgerName>"
+                If cmbVoucherType.ListIndex = 0 Then
+                    xmlStr = xmlStr & "<IsDeemedPositive>Yes</IsDeemedPositive>"
+                    xmlStr = xmlStr & "<Amount>-" & InvAmount & "</Amount>"
+                ElseIf cmbVoucherType.ListIndex = 1 Then
+                    xmlStr = xmlStr & "<IsDeemedPositive>No</IsDeemedPositive>"
+                    xmlStr = xmlStr & "<Amount>" & InvAmount & "</Amount>"
+                End If
+                xmlStr = xmlStr & "<IsPartyLedger>Yes</IsPartyLedger>"
+                xmlStr = xmlStr & "</LedgerEntries.LIST>"
+                
+                xmlStr = xmlStr & "<LedgerEntries.LIST>"
+                xmlStr = xmlStr & "<LedgerName>Vat</LedgerName>"
+                If cmbVoucherType.ListIndex = 0 Then
+                    xmlStr = xmlStr & "<IsDeemedPositive>No</IsDeemedPositive>"
+                    xmlStr = xmlStr & "<Amount>" & VatAmt & "</Amount>"
+                ElseIf cmbVoucherType.ListIndex = 1 Then
+                    xmlStr = xmlStr & "<IsDeemedPositive>Yes</IsDeemedPositive>"
+                    xmlStr = xmlStr & "<Amount>-" & VatAmt & "</Amount>"
+                End If
+                xmlStr = xmlStr & "<IsPartyLedger>No</IsPartyLedger>"
+                xmlStr = xmlStr & "</LedgerEntries.LIST>"
+                
+                xmlStr = xmlStr & "</Voucher>"
+                xmlStr = xmlStr & "</TALLYMESSAGE>"
+                xmlStr = xmlStr & "</REQUESTDATA>"
+                xmlStr = xmlStr & "</IMPORTDATA>"
+                xmlStr = xmlStr & "</BODY>"
+                xmlStr = xmlStr & "</ENVELOPE>"
+                     
+                Set ServerHTTP = New MSXML2.ServerXMLHTTP30
+                ServerHTTP.Open "POST", "http://localhost:" & PortNo
+                ServerHTTP.send xmlStr
+                resstr = ServerHTTP.responseText
+                xmlDom.loadXML (resstr)
+                Set childNodes = xmlDom.selectNodes("/RESPONSE/LINEERROR")
+                If (childNodes.length > 0) Then
+                    errorstr = ""
+                    For j = 0 To childNodes.length - 1
+                        errorstr = errorstr & childNodes(j).Text & " "
+                        errmsg = True
+                    Next
+                    Print #1, vbTab & "Voucher No  : " & InvNo & vbTab & Right(errorstr, (Len(errorstr) - 3))
+                    Print #1, "---------------------------------------------------------------------------------------"
+                End If
+            End If
+            Print #1, "========================================================================="
+            ColorPercentBar1.Value = ColorPercentBar1.Value + 1
+            'MsgBox ColorPercentBar1.Value
+        DayRS.MoveNext
+    Wend
+End If
+End If
+If errmsg = True Then
+   MsgBox "Import Not Successfully"
+   Shell "notepad.exe " & App.Path & "\Error.txt", vbMaximizedFocus
+   Close #1
+   Exit Sub
+Else
+   MsgBox "Import Successfully"
+   Close #1
+   Exit Sub
+End If
+End If
+End Sub
+
